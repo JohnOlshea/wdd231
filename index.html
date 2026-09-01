@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 - Course Home Page - John Alaska</title>
+    <meta name="description" content="WDD 231 Course Home Page for John Alaska - Web and Computer Programming Certificate">
+    <meta name="author" content="John Alaska">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <svg class="logo" viewBox="0 0 100 100" aria-label="Site Logo" role="img">
+                <rect width="100" height="100" fill="#1a4d2e"/>
+                <text x="50" y="58" text-anchor="middle" fill="white" font-size="48" font-family="Roboto">J</text>
+            </svg>
+            <span class="site-name">John Alaska</span>
+            <button id="menu" aria-label="Menu">☰</button>
+        </div>
+    </header>
+    <nav id="animateme">
+        <ul class="navigation">
+            <li><a href="#" class="active" id="home-link">Home</a></li>
+            <li><a href="#">Chamber Project</a></li>
+            <li><a href="#">Final Project</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Home</h1>
+        <div class="main-grid">
+            <section class="card about">
+                <h2>About Me</h2>
+                <div class="card-content">
+                    <p>Massa Facilisis Per Purus Si Imperdiet Curae Amet. Et Fames Lorem Mi Phasellus Congue Nascotur Enim Consectetur Sociisqu Natoque Risus. Odio Vehicula Libero Nisi Viverra Augue Commodo Pretium Vivamus At Duis Magna. Quam Fringilla Convallis Ridiculus Malesuada Accumsan Potenti Magnis Voluptat Nulla Ipsum. Dis Maecenas Et Praesent Class Fringilla.</p>
+                </div>
+            </section>
+            <section class="card photo">
+                <h2>Student Photo</h2>
+                <div class="card-content photo-content">
+                    <img src="images/profile.jpg" alt="John Alaska - Student Photo" width="200" height="200" loading="lazy">
+                </div>
+            </section>
+        </div>
+        <section class="card certificate">
+            <h2>Web Certificate Courses</h2>
+            <div class="card-content">
+                <div class="filter-buttons">
+                    <button id="all" class="filter active">All</button>
+                    <button id="cse" class="filter">CSE</button>
+                    <button id="wdd" class="filter">WDD</button>
+                </div>
+                <div id="courses" class="courses-grid"></div>
+                <p id="total-credits" class="credits">The total credits for course listed above is 6</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="social">
+            <a href="https://github.com/your-github-username" target="_blank" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="32" height="32"><path fill="currentColor" d="M12 .5C5.37.5 0 5.78 0 12.292c0 5.207 3.438 9.625 8.205 11.179.6.111.82-.254.82-.562 0-.277-.01-1.165-.015-2.115-3.338.71-4.043-1.394-4.043-1.394-.546-1.36-1.333-1.722-1.333-1.722-1.089-.73.083-.715.083-.715 1.205.082 1.84 1.213 1.84 1.213 1.07 1.798 2.807 1.278 3.492.977.108-.76.419-1.278.762-1.572-2.665-.296-5.466-1.305-5.466-5.806 0-1.283.465-2.332 1.235-3.153-.124-.297-.535-1.493.117-3.112 0 0 1.008-.316 3.3 1.205a11.5 11.5 0 0 1 3.004-.394c1.02.005 2.045.136 3.002.394 2.29-1.521 3.297-1.205 3.297-1.205.653 1.619.242 2.815.118 3.112.77.821 1.235 1.87 1.235 3.153 0 4.512-2.804 5.507-5.475 5.799.43.364.814 1.083.814 2.183 0 1.576-.015 2.848-.015 3.233 0 .31.218.677.824.562C20.565 21.91 24 17.492 24 12.292 24 5.78 18.63.5 12 .5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="32" height="32"><path fill="currentColor" d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.25 6.5 1.75 1.75 0 0 1 6.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0-.07.24V19h-3s.02-9 0-9h3v1.3a3.1 3.1 0 0 1 2.8-1.53c2.06 0 3.27 1.36 3.27 4.16z"/></svg>
+            </a>
+            <a href="https://x.com/" target="_blank" aria-label="X">
+                <svg viewBox="0 0 24 24" width="32" height="32"><path fill="currentColor" d="M18.9 1h3.1l-6.8 7.8L23.2 23h-6.3l-4.9-6.4-5.6 6.4H3.3l7.3-8.3L2.9 1h6.4l4.4 5.8L18.9 1zm-1.1 19.8h1.7L6.1 2.9H4.2z"/></svg>
+            </a>
+        </div>
+        <p>&copy; <span id="currentyear"></span> • John Alaska • Utah, USA</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
