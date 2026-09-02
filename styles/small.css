@@ -86,7 +86,8 @@ nav.open {
 }
 
 .navigation li a.active {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: #145c34;
+  color: white;
   font-weight: 700;
   border-left: 4px solid white;
 }

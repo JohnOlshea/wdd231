@@ -23,7 +23,8 @@
   }
 
   .navigation li a.active {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: #145c34;
+    color: white;
     text-decoration: underline;
     text-underline-offset: 6px;
   }
