@@ -301,13 +301,10 @@ footer {
 .social-row a {
     width: 36px;
     height: 36px;
-    border-radius: 50%;
-    background: #666;
     color: #fff;
     display: grid;
     place-items: center;
     text-decoration: none;
-    border: 1px solid #555
 }
 
 .social-row a:hover {
