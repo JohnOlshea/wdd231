@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Atlas Mining Co.",
+    "tagline": "Digging Deeper Since 1982",
+    "address": "12 Dune Road, Timbuktu, Mali 999",
+    "phone": "(223) 555-0112",
+    "email": "contact@atlasmining.timb",
+    "website": "https://atlasmining.timb",
+    "image": "images/chamber_image_1.jpg",
+    "membership": 3,
+    "level": "Gold"
+  },
+  {
+    "name": "Sahara Solar Solutions",
+    "tagline": "Powering the Desert Future",
+    "address": "44 Sun Lane, Timbuktu, Mali 999",
+    "phone": "(223) 555-0113",
+    "email": "hello@saharasolar.timb",
+    "website": "https://saharasolar.timb",
+    "image": "images/chamber_image_2.jpg",
+    "membership": 3,
+    "level": "Gold"
+  },
+  {
+    "name": "Caravan Logistics",
+    "tagline": "From Timbuktu to Everywhere",
+    "address": "8 Trade Route, Timbuktu, Mali 999",
+    "phone": "(223) 555-0114",
+    "email": "ship@caravanlog.timb",
+    "website": "https://caravanlog.timb",
+    "image": "images/chamber_image_3.jpg",
+    "membership": 2,
+    "level": "Silver"
+  },
+  {
+    "name": "Nile & Niger Books",
+    "tagline": "Ancient Wisdom, Modern Pages",
+    "address": "21 Library Row, Timbuktu, Mali 999",
+    "phone": "(223) 555-0115",
+    "email": "read@nilniger.timb",
+    "website": "https://nilnigerbooks.timb",
+    "image": "images/chamber_image_4.jpeg",
+    "membership": 2,
+    "level": "Silver"
+  },
+  {
+    "name": "Golden Grain Bakery",
+    "tagline": "Fresh Bread, Warm Community",
+    "address": "5 Market Street, Timbuktu, Mali 999",
+    "phone": "(223) 555-0116",
+    "email": "bake@goldengrain.timb",
+    "website": "https://goldengrain.timb",
+    "image": "images/chamber_image_5.jpg",
+    "membership": 1,
+    "level": "Member"
+  },
+  {
+    "name": "Desert Bloom Floral",
+    "tagline": "Life Finds a Way",
+    "address": "9 Oasis Ave, Timbuktu, Mali 999",
+    "phone": "(223) 555-0117",
+    "email": "bloom@desertbloom.timb",
+    "website": "https://desertbloom.timb",
+    "image": "images/chamber_image_6.jpg",
+    "membership": 1,
+    "level": "Member"
+  },
+  {
+    "name": "Timbuktu Textiles",
+    "tagline": "Woven Heritage, Global Style",
+    "address": "33 Loom Lane, Timbuktu, Mali 999",
+    "phone": "(223) 555-0118",
+    "email": "weave@timbtextiles.timb",
+    "website": "https://timbtextiles.timb",
+    "image": "images/chamber_image_7.jpg",
+    "membership": 3,
+    "level": "Gold"
+  }
+]

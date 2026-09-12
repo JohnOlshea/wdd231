@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timbuktu Chamber of Commerce - Directory</title>
+<meta name="description" content="Business directory for the Timbuktu Chamber of Commerce - find local businesses, services, and member information.">
+<meta name="author" content="John Alaska">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<meta property="og:title" content="Timbuktu Chamber of Commerce - Directory">
+<meta property="og:description" content="Explore local businesses in Timbuktu. Networking, resources, and community growth.">
+<meta property="og:image" content="images/atlas-mining-co.webp">
+<meta property="og:url" content="https://john-alaska.github.io/wdd231/chamber/directory.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="styles/normalize.css">
+<link rel="stylesheet" href="styles/small.css">
+<link rel="stylesheet" href="styles/larger.css">
+</head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+<header>
+  <div class="header-inner">
+    <a href="directory.html" class="brand" aria-label="Timbuktu Chamber of Commerce home"><span class="brand-icon" aria-hidden="true">◫</span><span>Timbuktu Chamber of Commerce</span></a>
+    <nav id="navMenu" aria-label="Primary navigation"><ul><li><a href="#">Home</a></li><li><a href="directory.html" class="active" aria-current="page">Directory</a></li><li><a href="#">Join</a></li><li><a href="#">Discover</a></li></ul></nav>
+    <button id="menuButton" aria-label="Open navigation menu" aria-expanded="false" aria-controls="menuPanel">☰</button>
+  </div>
+  <div id="menuPanel" class="menu-panel"><a href="#">Home</a><a href="directory.html" class="active">Directory</a><a href="#">Join</a><a href="#">Discover</a></div>
+</header>
+<main id="main-content">
+  <h1 class="page-title">Directory</h1>
+  <div class="view-controls" role="group" aria-label="View options"><button id="grid" class="active" aria-pressed="true">Grid</button><button id="list" aria-pressed="false">List</button></div>
+  <div id="members" class="grid-view" aria-live="polite"></div>
+</main>
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-title">Timbuktu Chamber of Commerce</div><div class="footer-muted">10 Rue De La Paix<br>Timbuktu, Mali 999<br>info@timbuktucc.org<br>(223) 555-2300</div></div>
+    <div class="social-col"><div class="social-row" aria-label="Social media"><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">▶</a><a href="https://x.com" target="_blank" rel="noopener" aria-label="X">𝕏</a><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a></div></div>
+    <div class="right-col"><div><strong>WDD231 Class Project</strong></div><div class="footer-muted">John Alaska</div><div>© <span id="currentyear"></span> Timbuktu Chamber of Commerce</div><div>Last Modification: <span id="lastModified"></span></div></div>
+  </div>
+</footer>
+<script src="scripts/directory.js" defer></script>
+</body>
+</html>
