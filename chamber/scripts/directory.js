@@ -1,4 +1,3 @@
-
 const membersContainer=document.getElementById('members');
 const gridBtn=document.getElementById('grid');
 const listBtn=document.getElementById('list');
@@ -15,16 +14,17 @@ if(menuBtn&&menuPanel){
   });
 }
 function setView(view){
+  if(!membersContainer) return;
   if(view==='list'){
     membersContainer.classList.add('list-view');
     membersContainer.classList.remove('grid-view');
-    listBtn.classList.add('active');gridBtn.classList.remove('active');
-    listBtn.setAttribute('aria-pressed','true');gridBtn.setAttribute('aria-pressed','false');
+    listBtn?.classList.add('active');gridBtn?.classList.remove('active');
+    listBtn?.setAttribute('aria-pressed','true');gridBtn?.setAttribute('aria-pressed','false');
   }else{
     membersContainer.classList.add('grid-view');
     membersContainer.classList.remove('list-view');
-    gridBtn.classList.add('active');listBtn.classList.remove('active');
-    gridBtn.setAttribute('aria-pressed','true');listBtn.setAttribute('aria-pressed','false');
+    gridBtn?.classList.add('active');listBtn?.classList.remove('active');
+    gridBtn?.setAttribute('aria-pressed','true');listBtn?.setAttribute('aria-pressed','false');
   }
   localStorage.setItem('directoryView',view);
 }
@@ -32,6 +32,7 @@ gridBtn?.addEventListener('click',()=>setView('grid'));
 listBtn?.addEventListener('click',()=>setView('list'));
 setView(localStorage.getItem('directoryView')==='list'?'list':'grid');
 async function getMembers(){
+  if(!membersContainer) return;
   try{
     const response=await fetch('data/members.json');
     if(!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -43,6 +44,7 @@ async function getMembers(){
   }
 }
 function displayMembers(members){
+  if(!membersContainer) return;
   membersContainer.innerHTML='';
   members.forEach((member)=>{
     const card=document.createElement('article');

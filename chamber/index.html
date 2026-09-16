@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timbuktu Chamber of Commerce - Home</title>
+  <meta name="description" content="Welcome to Timbuktu Chamber of Commerce - building business, building community. Join us, discover events, and support local businesses.">
+  <meta name="author" content="John Akala">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <meta property="og:title" content="Timbuktu Chamber of Commerce - Home">
+  <meta property="og:description" content="Building business, building community in Timbuktu, Mali.">
+  <meta property="og:image" content="https://johnolshea.github.io/wdd231/chamber/images/og-image.webp">
+  <meta property="og:url" content="https://johnolshea.github.io/wdd231/chamber/index.html">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <script src="scripts/directory.js" defer></script>
+  <script src="scripts/weather.js" defer></script>
+  <script src="scripts/spotlight.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="visually-hidden">Skip to main content</a>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="brand" aria-label="Timbuktu Chamber of Commerce home">
+        <span class="brand-icon" aria-hidden="true">◫</span>
+        <span>Timbuktu Chamber of Commerce</span>
+      </a>
+      <nav id="navMenu" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+      <button id="menuButton" aria-label="Open navigation menu" aria-expanded="false" aria-controls="menuPanel">☰</button>
+    </div>
+    <div id="menuPanel" class="menu-panel">
+      <a href="index.html" class="active">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="join.html">Join</a>
+      <a href="discover.html">Discover</a>
+    </div>
+  </header>
+  <main id="main-content">
+    <h1 class="page-title">Home</h1>
+    <section class="hero" aria-label="Welcome hero">
+      <img src="images/banner.jpg" alt="Timbuktu desert dunes at sunset with caravan" class="hero-img" width="1160" height="560" loading="eager" fetchpriority="high">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-left">
+          <p class="eyebrow">TIMBUKTU • MALI — EST. 1982</p>
+          <h2 class="hero-title">Building <em>Business.</em><br>Building Community.</h2>
+          <p class="hero-sub">The Timbuktu Chamber connects 7+ local businesses, hosts monthly networking, and fuels growth in the heart of the Sahara.</p>
+          <a href="join.html" class="cta-primary">Join the Chamber</a>
+        </div>
+      </div>
+    </section>
+    <div class="info-grid">
+      <article class="member-card"><div class="info-card"><div class="info-card-head"><h2 class="info-card-title">Events</h2><span class="info-badge">Upcoming</span></div><div class="events-list"><div class="event-row"><div class="date-pill"><b>15</b><span>NOV</span></div><div class="event-meta"><div class="ev-title">Business Networking Breakfast</div><div class="ev-desc">Atlas Mining Co. • 8:30 AM — Trade Route Hall</div></div></div><div class="event-row"><div class="date-pill"><b>02</b><span>DEC</span></div><div class="event-meta"><div class="ev-title">Holiday Market & Makers Fair</div><div class="ev-desc">Market Street • 10 AM - 6 PM • 24 vendors</div></div></div><div class="event-row"><div class="date-pill"><b>12</b><span>DEC</span></div><div class="event-meta"><div class="ev-title">Sahara Solar Demo Day</div><div class="ev-desc">Tech talk + sunset tour • RSVP required</div></div></div></div></div></article>
+      <article class="member-card"><div class="info-card"><div class="info-card-head"><h2 class="info-card-title">Weather</h2><span id="weather-badge" class="info-badge live-badge">Live • Timbuktu</span></div><div id="weather-current" class="weather-main"><p>Loading weather...</p></div><div id="forecast" class="forecast"></div></div></article>
+      <article class="member-card"><div class="info-card"><div class="info-card-head"><h2 class="info-card-title">Why Join?</h2></div><div class="benefits"><div class="benefit"><span class="check">✓</span><p>Visibility — <span>Get listed in our official directory and spotlight rotation.</span></p></div><div class="benefit"><span class="check">✓</span><p>Network — <span>Monthly mixers, trade referrals, and cross-promotion.</span></p></div><div class="benefit"><span class="check">✓</span><p>Advocacy — <span>A unified voice for policy, infrastructure, and funding.</span></p></div></div><a href="join.html" class="secondary-cta">View membership tiers</a></div></article>
+    </div>
+    <h2 class="page-title" style="margin-top:36px">Member Spotlights</h2>
+    <div id="spotlights" class="cards-grid" aria-live="polite"></div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-title">Timbuktu Chamber of Commerce</div><div class="footer-muted">10 Rue De La Paix<br>Timbuktu, Mali 999<br>info@timbuktucc.org<br>(223) 555-2300</div></div>
+      <div class="social-col"><div class="social-row" role="group" aria-label="Social media"><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><img src="images/youtube.png" alt="youtube" width="24" height="24"></a><a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><img src="images/twitter.png" alt="twitter" width="24" height="24"></a><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="images/linkedin.png" alt="linkedin" width="24" height="24"></a></div></div>
+      <div class="right-col"><div><strong>WDD231 Class Project</strong></div><div class="footer-muted">John Akala</div><div>© <span id="currentyear"></span> Timbuktu Chamber of Commerce</div><div>Last Modification: <span id="lastModified"></span></div></div>
+    </div>
+  </footer>
+</body>
+</html>
