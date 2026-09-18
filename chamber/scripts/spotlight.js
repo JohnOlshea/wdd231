@@ -18,7 +18,7 @@ function displaySpotlights(list){
     const art = document.createElement('article');
     art.className='member-card';
     art.innerHTML = `
-      <div class="card-head" style="position:relative"><span class="gold-badge">${m.level}</span><h2>${m.name}</h2><p>${m.tagline}</p></div>
+      <div class="card-head"><span class="gold-badge">${m.level}</span><h2>${m.name}</h2><p>${m.tagline}</p></div>
       <div class="card-divider" aria-hidden="true"></div>
       <div class="card-body">
         <img src="${m.image}" alt="Logo of ${m.name}" width="80" height="80" loading="lazy">

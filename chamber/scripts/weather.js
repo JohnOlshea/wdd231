@@ -23,7 +23,7 @@ function displayCurrent(d){
   if(!el) return;
   el.innerHTML = `
     <img src="https://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png" alt="${d.weather[0].description}" width="64" height="64" loading="lazy">
-    <div><div class="weather-temp">${Math.round(d.main.temp)}°C</div><div class="weather-desc">${d.weather[0].description} - feels like ${Math.round(d.main.feels_like)}°C</div><div style="font-size:11px;color:var(--muted)">Humidity: ${d.main.humidity}% | Wind: ${d.wind.speed} m/s</div></div>`;
+    <div><div class="weather-temp">${Math.round(d.main.temp)}°C</div><div class="weather-desc">${d.weather[0].description} - feels like ${Math.round(d.main.feels_like)}°C</div><div class="weather-details">Humidity: ${d.main.humidity}% | Wind: ${d.wind.speed} m/s</div></div>`;
 }
 function displayForecast(d){
   const el = document.getElementById('forecast');
