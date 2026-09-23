@@ -15,3 +15,11 @@
   .hero{height:560px}
   .hero-title{font-size:56px}
 }
+
+@media(min-width:700px){
+  .join-layout{grid-template-columns:1.2fr .8fr}
+  .thankyou-wrap{grid-template-columns:1fr 1fr}
+}
+@media(min-width:1000px){
+  .join-layout{grid-template-columns:1.35fr .65fr}
+}

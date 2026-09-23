@@ -154,3 +154,53 @@ footer{background:var(--header-bg);border-top:1px solid var(--card-border);margi
   font-size:11px;
   color:var(--muted);
 }
+
+.join-intro{font-size:.95rem;color:var(--muted);max-width:720px;margin:0 0 20px;line-height:1.6}
+.join-layout{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+.join-form{background:var(--card-bg);border:1px solid var(--card-border);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:18px}
+.join-form fieldset{border:1px solid var(--card-border);border-radius:6px;padding:12px 14px;margin:0}
+.join-form legend{font-weight:700;font-size:.9rem;padding:0 6px}
+.join-form label{display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:600;margin-bottom:2px}
+.join-form input[type="text"],
+.join-form input[type="email"],
+.join-form input[type="tel"],
+.join-form textarea,
+.join-form select{width:100%;padding:10px 12px;border:1.5px solid #9a9a9a;border-radius:6px;background:#fff;color:var(--text);font-size:.9rem;font-family:inherit}
+.join-form input:focus,
+.join-form textarea:focus,
+.join-form select:focus{outline:3px solid var(--focus);outline-offset:1px;border-color:var(--focus)}
+.join-form .hint{font-weight:400;font-size:.75rem;color:var(--muted)}
+.join-form .radio-label{flex-direction:row;align-items:center;gap:8px;font-weight:500;background:#fff;border:1px solid var(--card-border);padding:10px 12px;border-radius:6px;cursor:pointer}
+.join-form .radio-label input{width:16px;height:16px}
+.join-form .fieldset-desc{font-size:.8rem;color:var(--muted);margin:0 0 8px}
+.submit-btn{background:var(--text);color:#fff;border:1px solid var(--text);border-radius:999px;padding:12px 18px;font-weight:700;font-size:.9rem;cursor:pointer;transition:transform .2s}
+.submit-btn:hover{transform:translateY(-1px)}
+.membership-aside{display:grid;gap:14px}
+.aside-title{font-size:1.1rem;font-weight:800;margin:0 0 4px}
+.membership-card{background:var(--card-bg);border:1px solid var(--card-border);border-left:5px solid var(--text);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;opacity:0;transform:translateY(12px);animation:cardIn .6s cubic-bezier(.16,1,0.3,1) forwards}
+.membership-card h3{margin:0;font-size:1rem;font-weight:800}
+.membership-card .price{margin:0;font-size:.85rem;color:var(--muted)}
+.card-np{animation-delay:.1s;border-left-color:#2e7d32}
+.card-bronze{animation-delay:.25s;border-left-color:#8d6e63}
+.card-silver{animation-delay:.4s;border-left-color:#78909c}
+.card-gold{animation-delay:.55s;border-left-color:#f9a825}
+@keyframes cardIn{to{opacity:1;transform:translateY(0)}}
+.learn-btn{margin-top:8px;align-self:flex-start;background:#fff;border:1.5px solid var(--btn-border);border-radius:999px;padding:7px 14px;font-size:.8rem;font-weight:700}
+.learn-btn:hover{background:var(--text);color:#fff;border-color:var(--text)}
+.membership-modal{border:1px solid var(--card-border);border-radius:10px;padding:0;max-width:480px;width:90%;margin:auto;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.membership-modal::backdrop{background:rgba(0,0,0,.45)}
+.modal-content{padding:18px 18px 20px;position:relative}
+.close-modal{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;border:1px solid var(--card-border);background:#fff;display:grid;place-items:center}
+.modal-content h3{margin:0 32px 10px 0;font-size:1.05rem;font-weight:800}
+.modal-content ul{margin:8px 0 0 18px;font-size:.88rem;line-height:1.5;color:var(--muted)}
+.modal-content p{font-size:.88rem;line-height:1.5}
+.thankyou-wrap{display:grid;gap:20px;max-width:900px}
+.thankyou-card,.result-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:8px;padding:18px}
+.thankyou-card h2,.result-card h2{margin:0 0 10px;font-size:1.15rem;font-weight:800}
+.thankyou-card p,.thankyou-card ul{font-size:.9rem;line-height:1.6;color:var(--text)}
+.thankyou-card ul{margin-left:18px}
+.results-grid{display:flex;flex-direction:column;gap:10px}
+.result-row{display:flex;flex-wrap:wrap;gap:8px;padding:10px 12px;background:#fff;border:1px solid var(--card-border);border-radius:6px;font-size:.88rem}
+.result-label{font-weight:700;min-width:180px}
+.result-value{color:var(--muted);word-break:break-word}
+@media(prefers-reduced-motion:reduce){.membership-card{animation:none;opacity:1;transform:none}}
