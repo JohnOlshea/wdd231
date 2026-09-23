@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
   <script src="scripts/directory.js" defer></script>
+  <script src="scripts/thankyou.js" defer></script>
 </head>
 <body>
   <a href="#main-content" class="visually-hidden">Skip to main content</a>
@@ -66,7 +67,7 @@
         <div id="results" class="results-grid">
           <p>Loading your information...</p>
         </div>
-        <a href="index.html" class="secondary-cta" style="margin-top:20px">Return to Home</a>
+        <a href="index.html" class="secondary-cta return-home">Return to Home</a>
       </div>
     </div>
   </main>
@@ -79,33 +80,5 @@
     </div>
   </footer>
 
-  <script>
-    // Display form data - rubric 13
-    const params = new URLSearchParams(window.location.search);
-    const results = document.getElementById('results');
-    
-    const fields = [
-      { key: 'fname', label: 'First Name' },
-      { key: 'lname', label: 'Last Name' },
-      { key: 'email', label: 'Email' },
-      { key: 'phone', label: 'Mobile Number' },
-      { key: 'business', label: 'Business / Organization' },
-      { key: 'timestamp', label: 'Application Date' }
-    ];
-
-    const html = fields.map(f => {
-      let val = params.get(f.key) || 'Not provided';
-      // format timestamp nicely
-      if (f.key === 'timestamp' && val !== 'Not provided') {
-        try {
-          const d = new Date(val);
-          val = d.toLocaleString();
-        } catch(e) {}
-      }
-      return `<div class="result-row"><span class="result-label">${f.label}:</span><span class="result-value">${val}</span></div>`;
-    }).join('');
-
-    results.innerHTML = html;
-  </script>
 </body>
 </html>

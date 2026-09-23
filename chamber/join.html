@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
   <script src="scripts/directory.js" defer></script>
+  <script src="scripts/join.js" defer></script>
 </head>
 <body>
   <a href="#main-content" class="visually-hidden">Skip to main content</a>
@@ -208,28 +209,5 @@
     </div>
   </footer>
 
-  <script>
-    // timestamp - required for rubric 12
-    document.getElementById('timestamp').value = new Date().toISOString();
-
-    // modal handling - required for rubric 11
-    const modals = document.querySelectorAll('.membership-modal');
-    document.querySelectorAll('[data-modal]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const modal = document.getElementById(btn.dataset.modal);
-        if (modal) modal.showModal();
-      });
-    });
-    document.querySelectorAll('.close-modal').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.closest('dialog').close();
-      });
-    });
-    modals.forEach(d => {
-      d.addEventListener('click', e => {
-        if (e.target === d) d.close();
-      });
-    });
-  </script>
 </body>
 </html>
