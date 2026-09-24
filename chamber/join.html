@@ -23,7 +23,7 @@
   <script src="scripts/join.js" defer></script>
 </head>
 <body>
-  <a href="#main-content" class="visually-hidden">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
     <div class="header-inner">
       <a href="index.html" class="brand" aria-label="Timbuktu Chamber of Commerce home">
@@ -48,37 +48,38 @@
     </div>
   </header>
 
-  <main id="main-content">
-    <h1 class="page-title">Join the Chamber</h1>
-    <p class="join-intro">Become part of Timbuktu's business community. Fill out the application below and choose the membership level that fits your organization. Non-profit, growing, or established — there's a place for you.</p>
+  <main id="main-content" class="join-page">
+    <div class="join-hero">
+      <p class="eyebrow">Membership • Est. 1982 • Timbuktu, Mali</p>
+      <h1 class="join-title">Join the <em>Chamber.</em><br>Build what's next.</h1>
+      <p class="join-intro">Become part of a 40+ year network of traders, makers, and innovators. One application, four levels, endless community. Non-profit, startup, or established — there is a seat for you.</p>
+    </div>
 
     <div class="join-layout">
-      <!-- FORM -->
       <form method="get" action="thankyou.html" class="join-form" id="joinForm">
+        <div class="form-header">
+          <h2>Application</h2>
+          <p>All fields marked * are required. Takes ~3 minutes.</p>
+        </div>
+
         <fieldset>
           <legend>Applicant Information</legend>
-
           <label>First Name*
             <input type="text" name="fname" id="fname" title="Enter your first name" autocomplete="given-name" required>
           </label>
-
           <label>Last Name*
             <input type="text" name="lname" id="lname" title="Enter your last name" autocomplete="family-name" required>
           </label>
-
           <label>Organizational Title
             <input type="text" name="orgtitle" id="orgtitle" title="Enter your organizational title (min 7 letters, hyphens, spaces only)" autocomplete="organization-title" pattern="[A-Za-z\-\s]{7,}">
-            <span class="hint">Alpha, hyphens, spaces only — minimum 7 characters (e.g. Marketing Director)</span>
+            <span class="hint">Min 7 chars, letters, hyphens and spaces only — e.g. Marketing Director</span>
           </label>
-
           <label>Email Address*
             <input type="email" name="email" id="email" title="Enter your email address" autocomplete="email" placeholder="you@example.com" required>
           </label>
-
           <label>Mobile Phone*
             <input type="tel" name="phone" id="phone" title="Enter your mobile phone number" autocomplete="tel" required>
           </label>
-
           <label>Business / Organization Name*
             <input type="text" name="business" id="business" title="Enter your business or organization name" autocomplete="organization" required>
           </label>
@@ -86,12 +87,23 @@
 
         <fieldset>
           <legend>Membership Level</legend>
-          <p class="fieldset-desc">Select one membership level:</p>
-          
-          <label class="radio-label"><input type="radio" name="membership" id="membership-np" value="np" required> NP Membership - Non-profit, no fee</label>
-          <label class="radio-label"><input type="radio" name="membership" id="membership-bronze" value="bronze"> Bronze Membership</label>
-          <label class="radio-label"><input type="radio" name="membership" id="membership-silver" value="silver"> Silver Membership</label>
-          <label class="radio-label"><input type="radio" name="membership" id="membership-gold" value="gold"> Gold Membership</label>
+          <p class="fieldset-desc">Select one — you can upgrade anytime.</p>
+          <label class="radio-label">
+            <input type="radio" name="membership" id="membership-np" value="np" required>
+            <span class="radio-text"><strong>NP Membership</strong> <span>— Non-profit, no fee</span></span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="membership" id="membership-bronze" value="bronze">
+            <span class="radio-text"><strong>Bronze Membership</strong> <span>— $100/year</span></span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="membership" id="membership-silver" value="silver">
+            <span class="radio-text"><strong>Silver Membership</strong> <span>— $200/year</span></span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="membership" id="membership-gold" value="gold">
+            <span class="radio-text"><strong>Gold Membership</strong> <span>— $400/year • Best value</span></span>
+          </label>
         </fieldset>
 
         <fieldset>
@@ -102,44 +114,62 @@
         </fieldset>
 
         <input type="hidden" name="timestamp" id="timestamp">
-
         <input type="submit" value="Apply for Membership" class="submit-btn">
+        <p class="form-footnote">By applying, you agree to our membership terms. We reply within 2 business days.</p>
       </form>
 
-      <!-- MEMBERSHIP CARDS -->
       <aside class="membership-aside" aria-label="Membership levels">
-        <h2 class="aside-title">Membership Levels</h2>
+        <div class="aside-sticky">
+          <h2 class="aside-title">Membership Levels</h2>
+          <p class="aside-sub">Click to see full benefits.</p>
 
-        <div class="membership-card card-np">
-          <h3>NP Membership</h3>
-          <p class="price">Free - For non-profits</p>
-          <button type="button" class="learn-btn" data-modal="npModal">Learn More</button>
-        </div>
+          <div class="membership-card card-np">
+            <div class="card-top">
+              <span class="tier-badge badge-np">Free</span>
+              <h3>NP Membership</h3>
+            </div>
+            <p class="price">Non-profits • $0/year</p>
+            <p class="card-desc">For registered non-profits making impact.</p>
+            <button type="button" class="learn-btn" data-modal="npModal">View Benefits</button>
+          </div>
 
-        <div class="membership-card card-bronze">
-          <h3>Bronze Membership</h3>
-          <p class="price">$100 / year</p>
-          <button type="button" class="learn-btn" data-modal="bronzeModal">Learn More</button>
-        </div>
+          <div class="membership-card card-bronze">
+            <div class="card-top">
+              <span class="tier-badge badge-bronze">Starter</span>
+              <h3>Bronze Membership</h3>
+            </div>
+            <p class="price">$100 / year</p>
+            <p class="card-desc">Essential visibility for small businesses.</p>
+            <button type="button" class="learn-btn" data-modal="bronzeModal">View Benefits</button>
+          </div>
 
-        <div class="membership-card card-silver">
-          <h3>Silver Membership</h3>
-          <p class="price">$200 / year</p>
-          <button type="button" class="learn-btn" data-modal="silverModal">Learn More</button>
-        </div>
+          <div class="membership-card card-silver">
+            <div class="card-top">
+              <span class="tier-badge badge-silver">Popular</span>
+              <h3>Silver Membership</h3>
+            </div>
+            <p class="price">$200 / year</p>
+            <p class="card-desc">Growth, training, and spotlight rotation.</p>
+            <button type="button" class="learn-btn" data-modal="silverModal">View Benefits</button>
+          </div>
 
-        <div class="membership-card card-gold">
-          <h3>Gold Membership</h3>
-          <p class="price">$400 / year</p>
-          <button type="button" class="learn-btn" data-modal="goldModal">Learn More</button>
+          <div class="membership-card card-gold">
+            <div class="card-top">
+              <span class="tier-badge badge-gold">Premium</span>
+              <h3>Gold Membership</h3>
+            </div>
+            <p class="price">$400 / year</p>
+            <p class="card-desc">Maximum visibility, advocacy, and perks.</p>
+            <button type="button" class="learn-btn gold-btn" data-modal="goldModal">View Benefits</button>
+          </div>
         </div>
       </aside>
     </div>
 
-    <!-- MODALS using native dialog -->
     <dialog id="npModal" class="membership-modal">
       <div class="modal-content">
-        <button class="close-modal" aria-label="Close">✕</button>
+        <button class="close-modal" aria-label="Close modal">✕</button>
+        <span class="modal-eyebrow">Tier 01 • Free</span>
         <h3>NP Membership Benefits</h3>
         <p><strong>Cost: $0</strong> — Designed for non-profit organizations.</p>
         <ul>
@@ -147,13 +177,15 @@
           <li>Invitation to quarterly non-profit roundtable</li>
           <li>Access to community service events</li>
           <li>Monthly newsletter feature</li>
+          <li>Member pricing for 1 event/year</li>
         </ul>
       </div>
     </dialog>
 
     <dialog id="bronzeModal" class="membership-modal">
       <div class="modal-content">
-        <button class="close-modal" aria-label="Close">✕</button>
+        <button class="close-modal" aria-label="Close modal">✕</button>
+        <span class="modal-eyebrow">Tier 02 • Starter</span>
         <h3>Bronze Membership Benefits</h3>
         <p><strong>Cost: $100/year</strong> — Perfect for small businesses.</p>
         <ul>
@@ -162,13 +194,15 @@
           <li>10% discount on chamber events</li>
           <li>Social media spotlight (1 per quarter)</li>
           <li>Access to member-only networking</li>
+          <li>Directory listing with logo</li>
         </ul>
       </div>
     </dialog>
 
     <dialog id="silverModal" class="membership-modal">
       <div class="modal-content">
-        <button class="close-modal" aria-label="Close">✕</button>
+        <button class="close-modal" aria-label="Close modal">✕</button>
+        <span class="modal-eyebrow">Tier 03 • Most Popular</span>
         <h3>Silver Membership Benefits</h3>
         <p><strong>Cost: $200/year</strong> — Most popular for growing businesses.</p>
         <ul>
@@ -178,13 +212,15 @@
           <li>Social media spotlight (monthly)</li>
           <li>Home page spotlight rotation</li>
           <li>Advertising in chamber newsletter</li>
+          <li>Free table at one mixer</li>
         </ul>
       </div>
     </dialog>
 
     <dialog id="goldModal" class="membership-modal">
       <div class="modal-content">
-        <button class="close-modal" aria-label="Close">✕</button>
+        <button class="close-modal" aria-label="Close modal">✕</button>
+        <span class="modal-eyebrow">Tier 04 • Premium</span>
         <h3>Gold Membership Benefits</h3>
         <p><strong>Cost: $400/year</strong> — Maximum visibility and influence.</p>
         <ul>
@@ -195,6 +231,7 @@
           <li>Dedicated business advocacy</li>
           <li>Free booth at Holiday Market & Makers Fair</li>
           <li>Priority referral program</li>
+          <li>Annual business strategy consult</li>
         </ul>
       </div>
     </dialog>
@@ -208,6 +245,5 @@
       <div class="right-col"><div><strong>WDD231 Class Project</strong></div><div class="footer-muted">John Akala</div><div>© <span id="currentyear"></span> Timbuktu Chamber of Commerce</div><div>Last Modification: <span id="lastModified"></span></div></div>
     </div>
   </footer>
-
 </body>
 </html>

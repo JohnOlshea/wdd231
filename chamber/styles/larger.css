@@ -8,18 +8,18 @@
   .footer-inner{grid-template-columns:1fr auto 1fr;align-items:start}
   .footer-inner .social-col{justify-self:center}
   .footer-inner .right-col{text-align:right}
+  .join-title{font-size:54px}
+  .join-layout{grid-template-columns:1.2fr .8fr}
+  .aside-sticky{position:sticky;top:88px}
+  .thankyou-wrap{grid-template-columns:1.05fr .95fr;align-items:start}
+  .thankyou-title{font-size:56px}
 }
 @media (min-width:1000px){
   #members{grid-template-columns:repeat(3,1fr)}
   .cards-grid{grid-template-columns:repeat(3,1fr)}
   .hero{height:560px}
   .hero-title{font-size:56px}
-}
-
-@media(min-width:700px){
-  .join-layout{grid-template-columns:1.2fr .8fr}
-  .thankyou-wrap{grid-template-columns:1fr 1fr}
-}
-@media(min-width:1000px){
-  .join-layout{grid-template-columns:1.35fr .65fr}
+  .join-layout{grid-template-columns:1.35fr .65fr;gap:32px}
+  .join-hero{padding-top:32px}
+  .join-form{padding:26px 24px}
 }

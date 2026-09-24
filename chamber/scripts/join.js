@@ -1,39 +1,40 @@
-// Set the current date and time when the page loads
+// Set timestamp + modal handling
 const timestamp = document.getElementById('timestamp');
-
 if (timestamp) {
   timestamp.value = new Date().toISOString();
 }
 
-// Membership modal handling
 const modals = document.querySelectorAll('.membership-modal');
 
 document.querySelectorAll('[data-modal]').forEach((button) => {
   button.addEventListener('click', () => {
     const modal = document.getElementById(button.dataset.modal);
-
-    if (modal) {
+    if (modal && typeof modal.showModal === 'function') {
       modal.showModal();
     }
   });
 });
 
-// Close buttons
 document.querySelectorAll('.close-modal').forEach((button) => {
   button.addEventListener('click', () => {
     const modal = button.closest('dialog');
-
-    if (modal) {
-      modal.close();
-    }
+    if (modal) modal.close();
   });
 });
 
-// Close modal when clicking outside the modal content
 modals.forEach((modal) => {
   modal.addEventListener('click', (event) => {
     if (event.target === modal) {
       modal.close();
     }
   });
+});
+
+// Close with Escape handled natively by dialog, but ensure focus returns
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    modals.forEach((m) => {
+      if (m.open) m.close();
+    });
+  }
 });

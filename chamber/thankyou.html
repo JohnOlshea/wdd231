@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
@@ -23,7 +23,7 @@
   <script src="scripts/thankyou.js" defer></script>
 </head>
 <body>
-  <a href="#main-content" class="visually-hidden">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
     <div class="header-inner">
       <a href="index.html" class="brand" aria-label="Timbuktu Chamber of Commerce home">
@@ -48,26 +48,36 @@
     </div>
   </header>
 
-  <main id="main-content">
-    <h1 class="page-title">Thank You!</h1>
+  <main id="main-content" class="thankyou-page">
+    <div class="thankyou-hero">
+      <p class="eyebrow">Application Received • Welcome</p>
+      <h1 class="thankyou-title">You're in, <em id="thankyouName">friend.</em></h1>
+      <p class="thankyou-lead">We have received your membership application. Our team will review it and contact you within 2 business days. We're excited to build business and build community with you.</p>
+    </div>
+
     <div class="thankyou-wrap">
       <div class="thankyou-card">
+        <span class="modal-eyebrow">What happens next</span>
         <h2>Welcome to the Timbuktu Chamber!</h2>
-        <p>We have received your membership application. Our team will review it and contact you within 2 business days. We're excited to build business and build community with you.</p>
-        <p><strong>What happens next?</strong></p>
-        <ul>
-          <li>Confirmation email will be sent to your email address</li>
-          <li>Our membership coordinator will call to welcome you</li>
-          <li>You'll be added to the next monthly mixer invite</li>
+        <p>Your journey with us starts now.</p>
+        <ul class="next-steps">
+          <li><span class="check">✓</span><div><strong>Confirmation email</strong><p>Sent to your inbox within 5 minutes</p></div></li>
+          <li><span class="check">✓</span><div><strong>Welcome call</strong><p>Our membership coordinator will call you</p></div></li>
+          <li><span class="check">✓</span><div><strong>Mixer invite</strong><p>Added to next monthly networking breakfast</p></div></li>
         </ul>
+        <div class="thankyou-actions">
+          <a href="directory.html" class="cta-dark">Explore Directory</a>
+          <a href="index.html" class="secondary-cta return-home">Return to Home</a>
+        </div>
       </div>
 
       <div class="result-card">
-        <h2>Your Submitted Information</h2>
+        <span class="modal-eyebrow">Your submission</span>
+        <h2>Application Summary</h2>
         <div id="results" class="results-grid">
           <p>Loading your information...</p>
         </div>
-        <a href="index.html" class="secondary-cta return-home">Return to Home</a>
+        <p class="results-footnote">Keep this for your records. Your application timestamp is in your local time.</p>
       </div>
     </div>
   </main>
@@ -79,6 +89,5 @@
       <div class="right-col"><div><strong>WDD231 Class Project</strong></div><div class="footer-muted">John Akala</div><div>© <span id="currentyear"></span> Timbuktu Chamber of Commerce</div><div>Last Modification: <span id="lastModified"></span></div></div>
     </div>
   </footer>
-
 </body>
 </html>
