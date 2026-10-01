@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flourish - Site Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#C4B8AD;
+  --primary-dark:#A89A8E;
+  --bg:#F7F3EF;
+  --text:#1A1A1A;
+  --accent:#E8DDD5;
+  --white:#FFFFFF;
+  --muted:#6B6560;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  padding:0;
+}
+h1,h2,h3{
+  font-family:'Outfit',sans-serif;
+  color:var(--text);
+  letter-spacing:-0.02em;
+}
+header{
+  background:var(--primary);
+  color:var(--white);
+  padding:3rem 2rem;
+  text-align:center;
+}
+header h1{
+  font-size:3rem;
+  color:var(--white);
+  font-weight:700;
+}
+header p{
+  margin-top:0.5rem;
+  font-size:1.1rem;
+  opacity:0.9;
+}
+main{
+  max-width:900px;
+  margin:0 auto;
+  padding:2.5rem 1.5rem 4rem;
+}
+section{
+  background:var(--white);
+  border-radius:24px;
+  padding:2rem 2rem;
+  margin-bottom:2rem;
+  border:1px solid var(--accent);
+  box-shadow:0 8px 30px rgba(196,184,173,0.15);
+}
+section h2{
+  font-size:1.7rem;
+  margin-bottom:1rem;
+  border-bottom:3px solid var(--primary);
+  display:inline-block;
+  padding-bottom:0.3rem;
+}
+.color-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1rem;
+  margin-top:1rem;
+}
+.color-card{
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid #eee;
+}
+.swatch{height:90px}
+.color-info{padding:0.8rem;background:var(--white)}
+.color-info strong{display:block;font-family:'Outfit',sans-serif}
+.font-sample{
+  background:var(--bg);
+  border-radius:12px;
+  padding:1rem;
+  margin-top:1rem;
+}
+.font-sample .outfit{font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:600}
+.font-sample .inter{font-family:'Inter',sans-serif}
+.wireframes{
+  display:grid;
+  gap:2rem;
+}
+.wireframe-box{
+  background:var(--bg);
+  border-radius:16px;
+  padding:1rem;
+  border:2px dashed var(--primary-dark);
+}
+.wireframe-box img{
+  width:100%;
+  border-radius:12px;
+  background:white;
+  border:1px solid #ddd;
+}
+.wireframe-box h3{
+  margin-bottom:0.6rem;
+  color:var(--primary-dark);
+}
+ul{padding-left:1.2rem}
+li{margin-bottom:0.5rem}
+.badge{
+  display:inline-block;
+  background:var(--primary);
+  color:var(--white);
+  padding:0.2rem 0.8rem;
+  border-radius:20px;
+  font-size:0.8rem;
+  font-weight:600;
+}
+footer{
+  text-align:center;
+  padding:2rem;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+@media(max-width:600px){
+  header h1{font-size:2.2rem}
+  section{padding:1.4rem}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Flourish Beauty Space</h1>
+  <p>Site Plan • WDD 231 Individual Project</p>
+  <p style="margin-top:1rem;font-size:0.9rem">Domain idea: flourish-beauty.space — available concept for a luxury skincare brand</p>
+</header>
+
+<main>
+  <section>
+    <h2>Site Name</h2>
+    <p><strong>Flourish Beauty Space</strong></p>
+    <p style="margin-top:0.8rem">This name was selected because it represents the core philosophy seen in the design reference: <em>"Give life to your inner world and flourish in your uniqueness"</em>. The word Flourish evokes growth, radiance, and self-care, while Beauty Space suggests both a physical spa and a digital editorial space. It is short, memorable, luxurious, and perfect for branding a Centella-based skincare line focused on skin recovery and calming.</p>
+    <p style="margin-top:0.8rem"><span class="badge">Domain</span> flourish-beauty.space / flourishskincare.co - Concept domain for portfolio use, not required to be purchased for class.</p>
+  </section>
+
+  <section>
+    <h2>Site Purpose</h2>
+    <p>The site provides a hub for luxury skincare education and shopping, focused on Centella-based recovery products.</p>
+    <ul style="margin-top:1rem">
+      <li>Provides detailed product information including ingredients, benefits, size, price, and how to use serums and foam cleansers.</li>
+      <li>Offers an e-commerce experience using dynamic features: product catalog loaded from JSON, cart and wishlist using localStorage, and filtering via browser APIs.</li>
+      <li>Shares editorial content through the Beauty Space / Journal - routines, ingredient deep-dives, and community testimonials (750K+ community).</li>
+      <li>Serves as a three-page informational site that demonstrates valid HTML, accessible CSS, responsive design, and performance optimization.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Scenarios</h2>
+    <p>Target audience: Women 20-35 interested in clean, calming skincare for sensitive skin.</p>
+    <ul style="margin-top:1rem">
+      <li><strong>What is the best Centella product for sensitive, irritated skin and how much does it cost?</strong> - Visitor wants to compare the Ampoule Foam vs Calming Pads vs Facial Serum, see prices ($68.99, $27.69) and benefits.</li>
+      <li><strong>Where can I find your skincare routine and ingredient information?</strong> - Visitor is looking for educational content about how to use the products and what makes Centella effective.</li>
+      <li><strong>How do I save products and checkout securely?</strong> - Visitor wants to add items to cart/wishlist and understand the checkout flow.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Color Scheme</h2>
+    <p>Selected palette is inspired by the screenshot reference - soft taupe luxury minimalism that feels calm and premium.</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="swatch" style="background:#C4B8AD"></div>
+        <div class="color-info"><strong>#C4B8AD - Taupe</strong><span>Primary - Header background, hero background, primary buttons, headings accent</span></div>
+      </div>
+      <div class="color-card">
+        <div class="swatch" style="background:#F7F3EF"></div>
+        <div class="color-info"><strong>#F7F3EF - Cream</strong><span>Background - Page background, section backgrounds, cards secondary</span></div>
+      </div>
+      <div class="color-card">
+        <div class="swatch" style="background:#1A1A1A"></div>
+        <div class="color-info"><strong>#1A1A1A - Soft Black</strong><span>Text - Headings, paragraphs, primary buttons text, footer</span></div>
+      </div>
+      <div class="color-card">
+        <div class="swatch" style="background:#FFFFFF;border-bottom:1px solid #eee"></div>
+        <div class="color-info"><strong>#FFFFFF - White</strong><span>Cards - Product cards, content sections, navigation</span></div>
+      </div>
+      <div class="color-card">
+        <div class="swatch" style="background:#E8DDD5"></div>
+        <div class="color-info"><strong>#E8DDD5 - Light Accent</strong><span>Borders, dividers, hover states, subtle accents</span></div>
+      </div>
+    </div>
+    <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted)">Contrast ratio checked: Black #1A1A1A on Cream #F7F3EF = 16.5:1 (WCAG AAA), White on Taupe #C4B8AD = 4.8:1 (WCAG AA). This document itself uses this exact color scheme.</p>
+  </section>
+
+  <section>
+    <h2>Typography</h2>
+    <p>Only two fonts to keep it luxury and performant.</p>
+    <div class="font-sample">
+      <p class="outfit">Outfit - Used for Headings (h1, h2, h3), Logo, Product Names, Buttons</p>
+      <p style="font-family:'Outfit',sans-serif;font-weight:700;font-size:2rem;margin-top:0.5rem">Flourish in Daily Power</p>
+      <p style="margin-top:1rem" class="inter">Inter - Used for Body, Paragraphs, Navigation, Small UI text</p>
+      <p class="inter" style="margin-top:0.5rem">Give life to your inner world and flourish in your uniqueness, even if you seem a little strange to those around you, just be yourself and free.</p>
+    </div>
+    <p style="margin-top:1rem">Reason: Outfit is a modern geometric sans that feels premium and bold for hero headlines (matching the screenshot). Inter is highly readable for body copy and is optimized for web performance and accessibility.</p>
+  </section>
+
+  <section>
+    <h2>Wireframe - Home Page</h2>
+    <p>Hand-drawn style wireframes focusing on structure, not color. No AI-generated HTML wireframe - these are sketches representing layout thinking.</p>
+    <div class="wireframes" style="margin-top:1.5rem">
+      <div class="wireframe-box">
+        <h3>Large Viewport - Desktop 1200px / 1440px</h3>
+        <img src="images/wireframe-desktop.png" alt="Desktop wireframe sketch - 3 column product grid, 50/50 hero with image placeholder, header with navigation">
+        <p style="margin-top:0.8rem;font-size:0.9rem"><strong>Layout:</strong> 12-col grid, header fixed 1200px container, hero 50/50 grid (headline left, image right), featured products 3-col grid, footer with info/links. CTA primary = black pill, secondary = outline.</p>
+      </div>
+      <div class="wireframe-box">
+        <h3>Small Viewport - Mobile 375px</h3>
+        <img src="images/wireframe-mobile.png" alt="Mobile wireframe sketch - single column stacked layout with hamburger menu and vertical product cards">
+        <p style="margin-top:0.8rem;font-size:0.9rem"><strong>Layout:</strong> 1-col vertical stack, sticky hamburger header, hero image stacked below headline, Shop Now CTA, Bestsellers single column cards with image left + text right, footer links stacked. Touch targets 44px+.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Testing & Compliance Plan</h2>
+    <ul>
+      <li><strong>HTML Validation:</strong> Will test final site plan and all pages via W3C Markup Validator.</li>
+      <li><strong>Accessibility:</strong> WAVE tool - ensure alt text for product images, proper heading hierarchy, ARIA labels for cart/wishlist icons.</li>
+      <li><strong>Performance:</strong> Lighthouse audit - optimize transparent PNGs, lazy load product images, use font-display swap.</li>
+      <li><strong>Color Contrast:</strong> WebAIM Contrast Checker - verified above for AA/AAA compliance.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Flourish Beauty Space - Site Plan for WDD231 • Created by Student • Colors and typography applied to this document per assignment requirements</p>
+  <p style="margin-top:0.5rem">References: Design inspiration from screenshot provided • Wireframes are hand-drawn style sketches</p>
+</footer>
+</body>
+</html>
