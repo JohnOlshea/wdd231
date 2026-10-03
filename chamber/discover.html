@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timbuktu Chamber of Commerce - Discover</title>
+  <meta name="description" content="Discover Timbuktu - 8 historic and cultural sites, demographics and features that appeal to chamber members and visitors.">
+  <meta name="author" content="John Akala">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta property="og:title" content="Timbuktu Chamber of Commerce - Discover">
+  <meta property="og:description" content="Explore 8 curated sites in Timbuktu - ancient crossroads of trade and knowledge.">
+  <meta property="og:image" content="https://johnolshea.github.io/wdd231/chamber/images/og-image.webp">
+  <meta property="og:url" content="https://johnolshea.github.io/wdd231/chamber/discover.html">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/discover.css">
+  <script src="scripts/directory.js" defer></script>
+  <script type="module" src="scripts/discover.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="brand" aria-label="Timbuktu Chamber of Commerce home">
+        <span class="brand-icon" aria-hidden="true">◫</span>
+        <span>Timbuktu Chamber of Commerce</span>
+      </a>
+      <nav id="navMenu" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html" class="active" aria-current="page">Discover</a></li>
+        </ul>
+      </nav>
+      <button id="menuButton" aria-label="Open navigation menu" aria-expanded="false" aria-controls="menuPanel">☰</button>
+    </div>
+    <div id="menuPanel" class="menu-panel">
+      <a href="index.html">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="join.html">Join</a>
+      <a href="discover.html" class="active">Discover</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="discover-hero">
+      <p class="eyebrow">WDD 231 • Discover • Timbuktu, Mali</p>
+      <h1>Discover <em>Timbuktu</em></h1>
+      <p class="lead">Ancient crossroads of trade, knowledge, and culture at the edge of the Sahara. Eight factual, representative sites — demographics, history, and commerce — curated for prospective members and visitors. Population ~54,000 • UNESCO World Heritage • Niger River corridor.</p>
+      <div id="visit-message" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="discover-grid" class="discover-grid" aria-label="Places of interest"></section>
+
+    <section class="discover-info" style="margin-top:32px; padding:18px; border:1px solid #e5e5e5; border-radius:12px; background:#faf7f2; font-size:13px; line-height:1.6; color:#444">
+      <h2 style="margin:0 0 8px; font-size:16px; font-weight:800">Why Timbuktu Matters for Business</h2>
+      <p style="margin:0">Median age 16.5 • 3 historic mosques • 700,000 manuscripts preserved • River trade + caravan heritage • Festival tourism + artisan markets. Your Chamber membership supports restoration, education, and sustainable trade routes.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-title">Timbuktu Chamber of Commerce</div><div class="footer-muted">10 Rue De La Paix<br>Timbuktu, Mali 999<br>info@timbuktucc.org<br>(223) 555-2300</div></div>
+      <div class="social-col"><div class="social-row" role="group" aria-label="Social media"><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><img src="images/youtube.png" alt="youtube" width="24" height="24"></a><a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><img src="images/twitter.png" alt="twitter" width="24" height="24"></a><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="images/linkedin.png" alt="linkedin" width="24" height="24"></a></div></div>
+      <div class="right-col"><div><strong>WDD231 Class Project</strong></div><div class="footer-muted">John Akala</div><div>© <span id="currentyear"></span> Timbuktu Chamber of Commerce</div><div>Last Modification: <span id="lastModified"></span></div></div>
+    </div>
+  </footer>
+</body>
+</html>
