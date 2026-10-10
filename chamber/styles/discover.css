@@ -109,3 +109,24 @@
       "action";
   }
 }
+
+/* Prevent horizontal scroll */
+.discover-grid, .discover-card, main{
+  max-width:100%;
+  min-width:0;
+}
+.discover-card p, .discover-card h2, .discover-card address{
+  overflow-wrap:anywhere;
+}
+
+/* Consistent spacing/alignment across all cards (repetition + alignment) */
+.discover-card h2{margin:16px 16px 4px}
+.discover-card address{margin:0 16px 8px}
+.discover-card p{margin:0 16px 12px}
+.discover-card .learn-more-btn{margin:0 16px 16px}
+
+/* Medium: keep text grouped next to the photo (proximity) */
+@media (min-width:641px) and (max-width:1024px){
+  .discover-card h2{margin-top:16px}
+  .discover-card figure{min-height:200px}
+}
