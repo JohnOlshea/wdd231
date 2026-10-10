@@ -76,6 +76,12 @@
 .discover-card p{grid-area:description}
 .discover-card .learn-more-btn{grid-area:action; justify-self:start}
 
+.discover-card figure img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
 /* ===== MEDIUM 641-1024px: one column, horizontal cards (photo left, text right) ===== */
 @media (min-width:641px) and (max-width:1024px){
   .discover-card{
