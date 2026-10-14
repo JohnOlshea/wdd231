@@ -1316,7 +1316,10 @@ html:has(dialog[open]) {
 }
 
 .svg-sprite{
-  position:absolute;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 
 .heart-fill{

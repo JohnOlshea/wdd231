@@ -452,17 +452,6 @@ textarea:focus-visible {
     }
 }
 
-.svg-sprite {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-}
-
-.heart-fill {
-    fill: var(--hf, none);
-}
-
 .bg-c2b5a8 {
     background: #c2b5a8;
 }
