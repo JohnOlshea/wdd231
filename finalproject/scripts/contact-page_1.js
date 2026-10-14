@@ -1,1 +1,0 @@
-document.addEventListener('DOMContentLoaded', function(){ var form=document.querySelector('.cform'); if(form){ form.addEventListener('submit', function(){ try{ localStorage.setItem('contact-draft','1'); }catch(e){} }); } });
