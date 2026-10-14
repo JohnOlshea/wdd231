@@ -1,0 +1,453 @@
+/* contact + thanks pages (extends products.css) */
+.cform {
+    background: #fff;
+    border-radius: calc(var(--rs)*1.1);
+    padding: clamp(24px, 4vw, 56px);
+    display: grid;
+    gap: 22px;
+    align-content: start;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .04)
+}
+
+.cform h2 {
+    font-size: clamp(30px, 3.2vw, 48px);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -.04em
+}
+
+.sub {
+    margin-top: 12px;
+    max-width: 520px;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--mut)
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    gap: 24px
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px
+}
+
+.f {
+    display: grid;
+    gap: 9px;
+    border: 0;
+    min-width: 0
+}
+
+.f label,
+.f legend {
+    font-size: 15.5px;
+    font-weight: 500;
+    padding: 0
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    background: var(--tint);
+    padding: 0 18px;
+    font: 400 17px 'Outfit', sans-serif;
+    color: var(--ink);
+    height: 56px;
+    appearance: none
+}
+
+textarea {
+    height: auto;
+    min-height: 150px;
+    padding: 16px 18px;
+    resize: vertical;
+    line-height: 1.5
+}
+
+select {
+    background: var(--tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231a1614' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right 18px center/14px no-repeat;
+    padding-right: 44px
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(26, 22, 20, .45)
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 0;
+    border-color: #000;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, .12)
+}
+
+.opts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.opt {
+    position: relative
+}
+
+.opt input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    cursor: pointer
+}
+
+.opt span {
+    display: inline-flex;
+    height: 46px;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 23px;
+    background: var(--tint);
+    font-size: 16px;
+    font-weight: 500
+}
+
+.opt input:checked+span {
+    background: #000;
+    color: #fff
+}
+
+.opt input:focus-visible+span {
+    outline: 2px solid #000;
+    outline-offset: 3px
+}
+
+.chk {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 15.5px;
+    color: var(--mut);
+    cursor: pointer
+}
+
+.chk input {
+    width: 22px;
+    height: 22px;
+    accent-color: #000;
+    flex: none
+}
+
+.send {
+    justify-self: start;
+    height: 60px;
+    border-radius: 30px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 8px 0 30px;
+    font-size: 17.5px;
+    font-weight: 500
+}
+
+.send i {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.send svg {
+    width: 22px;
+    height: 22px
+}
+
+.send:active {
+    transform: scale(.98)
+}
+
+.side {
+    position: relative;
+    overflow: hidden;
+    border-radius: calc(var(--rs)*1.1);
+    background: var(--taupe);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 560px
+}
+
+.side>img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 70% 22%
+}
+
+.glass {
+    position: relative;
+    margin: clamp(12px, 2vw, 22px);
+    padding: clamp(20px, 2.4vw, 30px);
+    border-radius: calc(var(--rs)*.8);
+    background: rgba(255, 255, 255, .88);
+    backdrop-filter: blur(16px)
+}
+
+.glass h2 {
+    font-size: clamp(24px, 2.2vw, 32px);
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: -.035em;
+    margin-bottom: 8px
+}
+
+.glass a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-top: 1px solid rgba(0, 0, 0, .08);
+    font-size: 18px;
+    font-weight: 500
+}
+
+.glass a:first-of-type {
+    margin-top: 12px
+}
+
+.glass small {
+    display: block;
+    font-size: 14.5px;
+    font-weight: 400;
+    color: var(--mut)
+}
+
+.glass i {
+    flex: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.glass i svg {
+    width: 20px;
+    height: 20px
+}
+
+.glass a:hover i {
+    background: #333
+}
+
+/* testimonials */
+.band.dark {
+    background: #141110;
+    color: #fff
+}
+
+.dark .in {
+    padding-top: clamp(56px, 8vw, 112px);
+    padding-bottom: clamp(56px, 8vw, 112px)
+}
+
+.rtop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: clamp(32px, 4vw, 56px)
+}
+
+.proof {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 18px
+}
+
+.ini {
+    display: flex
+}
+
+.ini i {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    margin-left: -12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 500 16px 'Outfit', sans-serif;
+    font-style: normal;
+    color: #000;
+    box-shadow: 0 0 0 3px #141110
+}
+
+.ini i:first-child {
+    margin: 0
+}
+
+.proof b {
+    display: block;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -.02em
+}
+
+.rate {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, .6)
+}
+
+.rate svg {
+    width: 15px;
+    height: 15px;
+    color: #fff
+}
+
+.rtop h2 {
+    max-width: 560px;
+    font-size: clamp(32px, 4vw, 60px);
+    line-height: .98;
+    font-weight: 500;
+    letter-spacing: -.045em
+}
+
+.rgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: 16px
+}
+
+.rv {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    border-radius: 28px;
+    background: #201c1a;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, .06)
+}
+
+.rvh {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.rvh i {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 500 14px 'Outfit', sans-serif;
+    font-style: normal;
+    color: #000
+}
+
+.rvh figcaption {
+    font-size: 15.5px;
+    font-weight: 500
+}
+
+.st {
+    display: flex;
+    gap: 2px;
+    margin-left: auto
+}
+
+.st svg {
+    width: 14px;
+    height: 14px;
+    color: #fff
+}
+
+.rv blockquote {
+    font-size: 17px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, .82)
+}
+
+/* thanks */
+.thanks {
+    max-width: 860px
+}
+
+.sum {
+    display: grid;
+    gap: 0
+}
+
+.sum div {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-top: 1px solid rgba(0, 0, 0, .08)
+}
+
+.sum dt {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--mut)
+}
+
+.sum dd {
+    font-size: 17px;
+    line-height: 1.5;
+    overflow-wrap: anywhere
+}
+
+.thanks .pill {
+    justify-self: start
+}
+
+@media(max-width:900px) {
+
+    .contact,
+    .grid2 {
+        grid-template-columns: 1fr
+    }
+
+    .rtop {
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    .side {
+        min-height: 480px
+    }
+
+    .sum div {
+        grid-template-columns: 1fr;
+        gap: 4px
+    }
+}

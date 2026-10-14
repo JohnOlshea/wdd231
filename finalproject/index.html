@@ -1,96 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Beauty Space</title>
-<link rel="preload" href="assets/fonts/outfit-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beauty Space</title>
+  <link rel="preload" href="assets/fonts/outfit-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body id="top">
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2.6l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 7H5.4"/></symbol><symbol id="i-logo" viewBox="0 0 40 40" fill="currentColor"><circle cx="11" cy="11" r="9.5"/><circle cx="29" cy="29" r="9.5"/><path d="M21 1.5h8a9.5 9.5 0 0 1 9.5 9.5v8H30a9 9 0 0 1-9-9z"/><path d="M1.5 21H10a9 9 0 0 1 9 9v8.5h-8A9.5 9.5 0 0 1 1.5 29z"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12"/></symbol><symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5-5.9-3.2-5.9 3.2 1.2-6.5L2.5 9.4l6.6-.9z"/></symbol></svg>
-<header class="dock" id="dock"><a class="dlogo" href="#top" aria-label="Top"><svg><use href="#i-logo"/></svg></a><nav><a href="#ritual">Beauty Space</a><a href="contact.html">Contact Us</a><a href="products.html">Product</a></nav><a class="dcart" href="#bestsellers" aria-label="Cart"><span class="cb" hidden>0</span><svg><use href="#i-cart"/></svg><span class="cb" hidden>0</span></a></header>
-<div class="hero">
-  <div class="stage" id="stage">
-    <main class="card">
-      <img class="model" src="assets/beauty_banner_transparent.png" alt="Model applying a serum">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+      stroke-linejoin="round">
+      <circle cx="9" cy="20" r="1.4" />
+      <circle cx="18" cy="20" r="1.4" />
+      <path d="M2 3h2.6l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 7H5.4" />
+    </symbol>
+    <symbol id="i-logo" viewBox="0 0 40 40" fill="currentColor">
+      <circle cx="11" cy="11" r="9.5" />
+      <circle cx="29" cy="29" r="9.5" />
+      <path d="M21 1.5h8a9.5 9.5 0 0 1 9.5 9.5v8H30a9 9 0 0 1-9-9z" />
+      <path d="M1.5 21H10a9 9 0 0 1 9 9v8.5h-8A9.5 9.5 0 0 1 1.5 29z" />
+    </symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z" />
+      <path d="M2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12" />
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor">
+      <path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5-5.9-3.2-5.9 3.2 1.2-6.5L2.5 9.4l6.6-.9z" />
+    </symbol>
+  </svg>
+  <header class="dock" id="dock"><a class="dlogo" href="#top" aria-label="Top"><svg>
+        <use href="#i-logo" />
+      </svg></a>
+    <nav><a href="#ritual">Beauty Space</a><a href="contact.html">Contact Us</a><a href="products.html">Product</a>
+    </nav><a class="dcart" href="#bestsellers" aria-label="Cart"><span class="cb" hidden>0</span><svg>
+        <use href="#i-cart" />
+      </svg><span class="cb" hidden>0</span></a>
+  </header>
+  <div class="hero">
+    <div class="stage" id="stage">
+      <main class="card">
+        <img class="model" src="assets/beauty_banner_transparent.png" alt="Model applying a serum">
 
-      <div class="hbar"><a class="circle logo" href="#" aria-label="Beauty Space home">
-        <svg viewBox="0 0 40 40" fill="#000"><circle cx="11" cy="11" r="9.5"/><circle cx="29" cy="29" r="9.5"/><path d="M21 1.5h8a9.5 9.5 0 0 1 9.5 9.5v8H30a9 9 0 0 1-9-9z"/><path d="M1.5 21H10a9 9 0 0 1 9 9v8.5h-8A9.5 9.5 0 0 1 1.5 29z"/></svg>
-      </a>
-      <nav class="nav" id="site-nav"><a href="#ritual">Beauty Space</a><a href="contact.html">Contact Us</a><a href="products.html">Product</a></nav>
+        <div class="hbar"><a class="circle logo" href="#" aria-label="Beauty Space home">
+            <svg viewBox="0 0 40 40" fill="#000">
+              <circle cx="11" cy="11" r="9.5" />
+              <circle cx="29" cy="29" r="9.5" />
+              <path d="M21 1.5h8a9.5 9.5 0 0 1 9.5 9.5v8H30a9 9 0 0 1-9-9z" />
+              <path d="M1.5 21H10a9 9 0 0 1 9 9v8.5h-8A9.5 9.5 0 0 1 1.5 29z" />
+            </svg>
+          </a>
+          <nav class="nav" id="site-nav"><a href="#ritual">Beauty Space</a><a href="contact.html">Contact Us</a><a
+              href="products.html">Product</a></nav>
 
-      <span class="badge" id="wishCount">12</span>
-      <button class="circle icon wish" id="wish" aria-label="Wishlist">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.8 4.5 6.6 4.5c2 0 3.6 1.1 5.4 3.1 1.8-2 3.4-3.1 5.4-3.1 3.8 0 5.7 3.8 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>
-      </button>
-      <button class="circle icon cart" aria-label="Cart">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2.6l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 7H5.4"/></svg>
-      </button>
-      <img class="me" src="assets/avatar-me.jpg" alt="Profile">
+          <span class="badge" id="wishCount">12</span>
+          <button class="circle icon wish" id="wish" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.8 4.5 6.6 4.5c2 0 3.6 1.1 5.4 3.1 1.8-2 3.4-3.1 5.4-3.1 3.8 0 5.7 3.8 4.2 7.2C19.5 16.4 12 21 12 21z" />
+            </svg>
+          </button>
+          <button class="circle icon cart" aria-label="Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="9" cy="20" r="1.4" />
+              <circle cx="18" cy="20" r="1.4" />
+              <path d="M2 3h2.6l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 7H5.4" />
+            </svg>
+          </button>
+          <img class="me" src="assets/avatar-me.jpg" alt="Profile">
 
-      <button class="circle menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-</div>
-<div class="hcopy"><h1 class="title">Flourish in<br>Daily Pover</h1>
-      <p class="lead">Give life to your inner world and flourish in your uniqueness, <br>even if you seem a little strange to those around you, just be <br>yourself and free.</p>
+          <button class="circle menu" type="button" aria-label="Menu" aria-expanded="false"
+            aria-controls="site-nav"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg></button>
+        </div>
+        <div class="hcopy">
+          <h1 class="title">Flourish in<br>Daily Pover</h1>
+          <p class="lead">Give life to your inner world and flourish in your uniqueness, <br>even if you seem a little
+            strange to those around you, just be <br>yourself and free.</p>
 
-      </div>
-<div class="hproof"><img class="av av1" src="assets/avatar-2.jpg" alt="">
-      <img class="av av2" src="assets/avatar-1.jpg" alt="">
-      <img class="av av3" src="assets/avatar-3.jpg" alt="">
-      <div class="count">750K +</div>
-      <p class="feature">Ultimate Skin Recovery<br>Refreshing Gel</p>
-      <button class="add" id="addCart"><span>Add to Cart</span>
-        <i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2.6l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 7H5.4"/></svg></i>
-      </button>
+        </div>
+        <div class="hproof"><img class="av av1" src="assets/avatar-2.jpg" alt="">
+          <img class="av av2" src="assets/avatar-1.jpg" alt="">
+          <img class="av av3" src="assets/avatar-3.jpg" alt="">
+          <div class="count">750K +</div>
+          <p class="feature">Ultimate Skin Recovery<br>Refreshing Gel</p>
+          <button class="add" id="addCart"><span>Add to Cart</span>
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="9" cy="20" r="1.4" />
+                <circle cx="18" cy="20" r="1.4" />
+                <path d="M2 3h2.6l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 7H5.4" />
+              </svg></i>
+          </button>
 
-      </div>
-<div class="prods"><article class="product p1">
-        <img src="assets/product-1.jpg" alt="Centella Ampoule Foam Serume">
-        <b class="price">$68.99</b>
-        <h3>Centella Ampoule<br>Foam Serume</h3>
-        <p>125 ml / 4.85<br>FL. OZ Max</p>
-        <button class="book">Book</button>
-      </article>
-      <article class="product p2">
-        <img src="assets/product-2.jpg" alt="Quick Calming Pads Serum">
-        <b class="price">$27.69</b>
-        <h3>Quick Calming<br>Pads Serum</h3>
-        <p>25 ml / 1.65<br>FL. OZ Max</p>
-        <button class="book">Book</button>
-      </article>
-      <article class="product p3">
-        <img src="assets/product-3.jpg" alt="Centella Asiatica Facial Serum">
-        <b class="price">$68.99</b>
-        <h3>Centella Asiatica<br>Facial Serum</h3>
-        <p>55 ml / 1.85<br>FL. OZ Max</p>
-        <button class="book">Book</button>
-      </article>
+        </div>
+        <div class="prods">
+          <article class="product p1">
+            <img src="assets/product-1.jpg" alt="Centella Ampoule Foam Serume">
+            <b class="price">$68.99</b>
+            <h3>Centella Ampoule<br>Foam Serume</h3>
+            <p>125 ml / 4.85<br>FL. OZ Max</p>
+            <button class="book">Book</button>
+          </article>
+          <article class="product p2">
+            <img src="assets/product-2.jpg" alt="Quick Calming Pads Serum">
+            <b class="price">$27.69</b>
+            <h3>Quick Calming<br>Pads Serum</h3>
+            <p>25 ml / 1.65<br>FL. OZ Max</p>
+            <button class="book">Book</button>
+          </article>
+          <article class="product p3">
+            <img src="assets/product-3.jpg" alt="Centella Asiatica Facial Serum">
+            <b class="price">$68.99</b>
+            <h3>Centella Asiatica<br>Facial Serum</h3>
+            <p>55 ml / 1.85<br>FL. OZ Max</p>
+            <button class="book">Book</button>
+          </article>
+        </div>
+      </main>
     </div>
-</main>
   </div>
-</div>
-<div class="end">
-<section class="wrap sec taupe" id="ritual"><div class="head"><h2 class="h2 w">Skin as<br>Self-Care</h2><p class="lede w">Three minutes morning and night. No 10-step pressure — just Centella, probiotics and soft intention.</p></div>
-<div class="grid3"><article class="step"><i class="num">1</i><img src="assets/product-1.jpg" alt=""><h3>Cleanse</h3><p>Melt the day with Madagascar Centella foam. No stripping, just soft cloud.</p></article><article class="step"><i class="num">2</i><img src="assets/product-2.jpg" alt=""><h3>Tone</h3><p>Balance with calming pads. Preps skin to absorb, not react.</p></article><article class="step"><i class="num">3</i><img src="assets/product-3.jpg" alt=""><h3>Seal</h3><p>Lock in calm with the Centella serum. A veil, not a mask.</p></article></div></section>
+  <div class="end">
+    <section class="wrap sec taupe" id="ritual">
+      <div class="head">
+        <h2 class="h2 w">Skin as<br>Self-Care</h2>
+        <p class="lede w">Three minutes morning and night. No 10-step pressure — just Centella, probiotics and soft
+          intention.</p>
+      </div>
+      <div class="grid3">
+        <article class="step"><i class="num">1</i><img src="assets/product-1.jpg" alt="">
+          <h3>Cleanse</h3>
+          <p>Melt the day with Madagascar Centella foam. No stripping, just soft cloud.</p>
+        </article>
+        <article class="step"><i class="num">2</i><img src="assets/product-2.jpg" alt="">
+          <h3>Tone</h3>
+          <p>Balance with calming pads. Preps skin to absorb, not react.</p>
+        </article>
+        <article class="step"><i class="num">3</i><img src="assets/product-3.jpg" alt="">
+          <h3>Seal</h3>
+          <p>Lock in calm with the Centella serum. A veil, not a mask.</p>
+        </article>
+      </div>
+    </section>
 
-<section class="wrap sec sand" id="bestsellers"><div class="head"><h2 class="h2">Bestsellers<br><span>calm in every bottle</span></h2><a class="pill" href="products.html">Shop All · 24 products</a></div>
-<div class="grid3"><article class="item"><img src="assets/product-1.jpg" alt="Centella Ampoule Foam Serume"><div class="row"><b>$68.99</b><span>125 ml / 4.85 FL. OZ Max</span></div><h3>Centella Ampoule Foam Serume</h3><button class="buy"><span>Add to Cart</span><i><svg><use href="#i-cart"/></svg></i></button></article><article class="item"><img src="assets/product-2.jpg" alt="Quick Calming Pads Serum"><div class="row"><b>$27.69</b><span>25 ml / 1.65 FL. OZ Max</span></div><h3>Quick Calming Pads Serum</h3><button class="buy"><span>Add to Cart</span><i><svg><use href="#i-cart"/></svg></i></button></article><article class="item"><img src="assets/product-3.jpg" alt="Centella Asiatica Facial Serum"><div class="row"><b>$68.99</b><span>55 ml / 1.85 FL. OZ Max</span></div><h3>Centella Asiatica Facial Serum</h3><button class="buy"><span>Add to Cart</span><i><svg><use href="#i-cart"/></svg></i></button></article></div></section>
+    <section class="wrap sec sand" id="bestsellers">
+      <div class="head">
+        <h2 class="h2">Bestsellers<br><span>calm in every bottle</span></h2><a class="pill" href="products.html">Shop
+          All · 24 products</a>
+      </div>
+      <div class="grid3">
+        <article class="item"><img src="assets/product-1.jpg" alt="Centella Ampoule Foam Serume">
+          <div class="row"><b>$68.99</b><span>125 ml / 4.85 FL. OZ Max</span></div>
+          <h3>Centella Ampoule Foam Serume</h3><button class="buy"><span>Add to Cart</span><i><svg>
+                <use href="#i-cart" />
+              </svg></i></button>
+        </article>
+        <article class="item"><img src="assets/product-2.jpg" alt="Quick Calming Pads Serum">
+          <div class="row"><b>$27.69</b><span>25 ml / 1.65 FL. OZ Max</span></div>
+          <h3>Quick Calming Pads Serum</h3><button class="buy"><span>Add to Cart</span><i><svg>
+                <use href="#i-cart" />
+              </svg></i></button>
+        </article>
+        <article class="item"><img src="assets/product-3.jpg" alt="Centella Asiatica Facial Serum">
+          <div class="row"><b>$68.99</b><span>55 ml / 1.85 FL. OZ Max</span></div>
+          <h3>Centella Asiatica Facial Serum</h3><button class="buy"><span>Add to Cart</span><i><svg>
+                <use href="#i-cart" />
+              </svg></i></button>
+        </article>
+      </div>
+    </section>
 
-<section class="wrap sec white spot" id="product"><div class="txt"><span class="tag">Ingredient spotlight</span><h2 class="h2">Centella Asiatica from the highlands of Madagascar</h2>
-<p class="lede">Wild-harvested at 800m, where the plant develops higher madecassoside. We extract at low temperature to keep the calm. No fragrance, no essential oils — just skin learning to repair itself.</p>
-<div class="stats"><div><b>72%</b><span>Centella extract in every foam</span></div><div><b>100%</b><span>Vegan, cruelty-free</span></div></div>
-<div class="btns"><a class="pill" href="products.html">Shop Centella</a><a class="pill ghost" href="#contact">Traceability report</a></div></div>
-<div class="vis taupe"><img src="assets/beauty_banner_transparent.png" alt="Model applying Centella serum"><div class="chip"><i><svg><use href="#i-leaf"/></svg></i><div><b>Fermented for 72 hours</b><span>Higher bioavailability, lower irritation</span></div></div></div></section>
+    <section class="wrap sec white spot" id="product">
+      <div class="txt"><span class="tag">Ingredient spotlight</span>
+        <h2 class="h2">Centella Asiatica from the highlands of Madagascar</h2>
+        <p class="lede">Wild-harvested at 800m, where the plant develops higher madecassoside. We extract at low
+          temperature to keep the calm. No fragrance, no essential oils — just skin learning to repair itself.</p>
+        <div class="stats">
+          <div><b>72%</b><span>Centella extract in every foam</span></div>
+          <div><b>100%</b><span>Vegan, cruelty-free</span></div>
+        </div>
+        <div class="btns"><a class="pill" href="products.html">Shop Centella</a><a class="pill ghost"
+            href="#contact">Traceability report</a></div>
+      </div>
+      <div class="vis taupe"><img src="assets/beauty_banner_transparent.png" alt="Model applying Centella serum">
+        <div class="chip"><i><svg>
+              <use href="#i-leaf" />
+            </svg></i>
+          <div><b>Fermented for 72 hours</b><span>Higher bioavailability, lower irritation</span></div>
+        </div>
+      </div>
+    </section>
 
-<section class="wrap sec dark" id="community"><div class="proof"><div class="avs"><img src="assets/avatar-2.jpg" alt=""><img src="assets/avatar-1.jpg" alt=""><img src="assets/avatar-3.jpg" alt=""></div><b class="big">750K +</b><div class="rate"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><span>4.9 average · 18k reviews</span></div></div>
-<div class="join"><h2 class="h2">Real skin, not retouch. A ritual that stays.</h2><form class="sub" id="sub"><input type="email" required placeholder="Your email" aria-label="Email"><button>Join the ritual</button></form><p class="ok" id="ok" hidden>Thank you — you're on the list.</p></div></section>
+    <section class="wrap sec dark" id="community">
+      <div class="proof">
+        <div class="avs"><img src="assets/avatar-2.jpg" alt=""><img src="assets/avatar-1.jpg" alt=""><img
+            src="assets/avatar-3.jpg" alt=""></div><b class="big">750K +</b>
+        <div class="rate"><svg>
+            <use href="#i-star" />
+          </svg><svg>
+            <use href="#i-star" />
+          </svg><svg>
+            <use href="#i-star" />
+          </svg><svg>
+            <use href="#i-star" />
+          </svg><svg>
+            <use href="#i-star" />
+          </svg><span>4.9 average · 18k reviews</span></div>
+      </div>
+      <div class="join">
+        <h2 class="h2">Real skin, not retouch. A ritual that stays.</h2>
+        <form class="sub" id="sub"><input type="email" required placeholder="Your email" aria-label="Email"><button>Join
+            the ritual</button></form>
+        <p class="ok" id="ok" hidden>Thank you — you're on the list.</p>
+      </div>
+    </section>
 
-<footer class="wrap sec sand foot" id="contact"><div class="fl"><a class="flogo" href="#top"><svg><use href="#i-logo"/></svg></a><p>Centella from Madagascar. Fermented, low-temp, fragrance-free. Skin as self-care, every day.</p></div>
-<div class="cols"><div><h4>Shop</h4><a href="products.html">Cleansers</a><a href="products.html">Toners</a><a href="products.html">Serums</a><a href="products.html">Moisturizers</a></div><div><h4>Ritual</h4><a href="#">How to use</a><a href="#">Skin quiz</a><a href="#">Ingredients</a><a href="#">Journal</a></div><div><h4>Support</h4><a href="contact.html">Contact Us</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">FAQ</a></div><div><h4>Follow</h4><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Community</a><a href="#">Press</a></div></div>
-<div class="legal"><span>© 2026 Beauty Space. All calm, all care.</span><span>Flourish in daily power</span></div></footer>
-</div>
-<script src="nav.js"></script>
-<script src="script.js"></script>
+    <footer class="wrap sec sand foot" id="contact">
+      <div class="fl"><a class="flogo" href="#top"><svg>
+            <use href="#i-logo" />
+          </svg></a>
+        <p>Centella from Madagascar. Fermented, low-temp, fragrance-free. Skin as self-care, every day.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h4>Shop</h4><a href="products.html">Cleansers</a><a href="products.html">Toners</a><a
+            href="products.html">Serums</a><a href="products.html">Moisturizers</a>
+        </div>
+        <div>
+          <h4>Ritual</h4><a href="#">How to use</a><a href="#">Skin quiz</a><a href="#">Ingredients</a><a
+            href="#">Journal</a>
+        </div>
+        <div>
+          <h4>Support</h4><a href="contact.html">Contact Us</a><a href="#">Shipping</a><a href="#">Returns</a><a
+            href="#">FAQ</a>
+        </div>
+        <div>
+          <h4>Follow</h4><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Community</a><a href="#">Press</a>
+        </div>
+      </div>
+      <div class="legal"><span>© 2026 Beauty Space. All calm, all care.</span><span>Flourish in daily power</span></div>
+    </footer>
+  </div>
+  <script src="nav.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
