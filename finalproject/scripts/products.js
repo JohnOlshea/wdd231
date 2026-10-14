@@ -1,97 +1,256 @@
 const dock = document.getElementById('dock');
-const onScroll = () => dock.classList.toggle('on', scrollY > 320);
-addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-// Filter + sort
-const grid = document.getElementById('pgrid'), cards = [...grid.children];
-const chips = [...document.querySelectorAll('.chip')], count = document.getElementById('count'), sort = document.getElementById('sort');
+const onScroll = () => {
+  dock.classList.toggle('on', window.scrollY > 320);
+};
+
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// Filter and sort
+const grid = document.getElementById('pgrid');
+const cards = [...grid.children];
+const chips = [...document.querySelectorAll('.chip')];
+const count = document.getElementById('count');
+const sort = document.getElementById('sort');
+
 let filter = 'all';
+
 function render() {
-  const list = cards.filter(c => filter === 'all' || c.dataset.cat === filter);
-  if (sort.value === 'asc') list.sort((a, b) => a.dataset.price - b.dataset.price);
-  else if (sort.value === 'desc') list.sort((a, b) => b.dataset.price - a.dataset.price);
-  else list.sort((a, b) => a.dataset.i - b.dataset.i);
-  cards.forEach(c => c.hidden = !list.includes(c));
-  list.forEach(c => grid.appendChild(c));
-  chips.forEach(c => c.classList.toggle('on', c.dataset.f === filter));
-  count.textContent = list.length + (list.length === 1 ? ' product' : ' products');
+  const list = cards.filter(
+    card => filter === 'all' || card.dataset.cat === filter
+  );
+
+  if (sort.value === 'asc') {
+    list.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
+  } else if (sort.value === 'desc') {
+    list.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+  } else {
+    list.sort((a, b) => Number(a.dataset.i) - Number(b.dataset.i));
+  }
+
+  cards.forEach(card => {
+    card.hidden = !list.includes(card);
+  });
+
+  list.forEach(card => grid.appendChild(card));
+
+  chips.forEach(chip => {
+    chip.classList.toggle('on', chip.dataset.f === filter);
+  });
+
+  count.textContent =
+    list.length + (list.length === 1 ? ' product' : ' products');
 }
-chips.forEach(c => c.addEventListener('click', () => { filter = c.dataset.f; render(); }));
+
+chips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    filter = chip.dataset.f;
+    render();
+  });
+});
+
 sort.addEventListener('change', render);
-document.querySelector('[data-go]').addEventListener('click', e => {
-  filter = e.currentTarget.dataset.go; render();
+
+document.querySelector('[data-go]').addEventListener('click', event => {
+  filter = event.currentTarget.dataset.go;
+  render();
   document.getElementById('shop').scrollIntoView();
 });
 
-// Wishlist (header count + card hearts)
-const wishCount = document.getElementById('wishCount'); let saved = 0;
-document.querySelectorAll('.pc .pheart').forEach(h => h.addEventListener('click', () => {
-  h.classList.toggle('on'); saved += h.classList.contains('on') ? 1 : -1;
-  wishCount.textContent = 12 + saved;
-}));
+// Wishlist: header count and card hearts
+const wishCount = document.getElementById('wishCount');
+let saved = 0;
 
-// Cart count (header + dock)
+document.querySelectorAll('.pc .pheart').forEach(heart => {
+  heart.addEventListener('click', () => {
+    heart.classList.toggle('on');
+
+    saved += heart.classList.contains('on') ? 1 : -1;
+    wishCount.textContent = 12 + saved;
+  });
+});
+
+// Cart count: header and dock
 let cart = 0;
-function addToCart(n = 1) {
-  cart += n;
-  document.querySelectorAll('.cb').forEach(x => { x.textContent = cart; x.hidden = false; });
+
+function addToCart(quantity = 1) {
+  cart += quantity;
+
+  document.querySelectorAll('.cb').forEach(counter => {
+    counter.textContent = cart;
+    counter.hidden = false;
+  });
 }
-document.querySelectorAll('.pc .buy').forEach(b => b.addEventListener('click', () => addToCart()));
+
+// Add products to cart
+document.querySelectorAll('.pc .buy').forEach(button => {
+  button.addEventListener('click', () => addToCart());
+});
 
 // Product modal
 const dlg = document.getElementById('pm');
-const $ = id => document.getElementById(id);
-const money = n => '$' + Number(n).toFixed(2);
-const label = { cleansers: 'Cleanser', toners: 'Toner', serums: 'Serum', moisturizers: 'Moisturizer' };
-const step = {
-  cleansers: ['Step 1 · Cleanse', 'Melt the day with Madagascar Centella foam. No stripping, just soft cloud.'],
-  toners: ['Step 2 · Tone', 'Balance with calming pads. Preps skin to absorb, not react.'],
-  serums: ['Step 3 · Seal', 'Lock in calm with the Centella serum. A veil, not a mask.'],
-  moisturizers: ['Step 3 · Seal', 'Lock in calm with a light cream. A veil, not a mask.']
+
+const getElement = id => document.getElementById(id);
+
+const money = amount => '$' + Number(amount).toFixed(2);
+
+const label = {
+  cleansers: 'Cleanser',
+  toners: 'Toner',
+  serums: 'Serum',
+  moisturizers: 'Moisturizer'
 };
-const products = cards.map(el => ({
-  el,
-  name: el.querySelector('.open').textContent,
-  price: el.dataset.price,
-  cat: el.dataset.cat,
-  meta: el.querySelector('.pbody p').textContent,
-  img: el.querySelector('.pimg img').getAttribute('src'),
-  rate: el.querySelector('.rt em').textContent
+
+const step = {
+  cleansers: [
+    'Step 1 · Cleanse',
+    'Melt the day with Madagascar Centella foam. No stripping, just soft cloud.'
+  ],
+  toners: [
+    'Step 2 · Tone',
+    'Balance with calming pads. Preps skin to absorb, not react.'
+  ],
+  serums: [
+    'Step 3 · Seal',
+    'Lock in calm with the Centella serum. A veil, not a mask.'
+  ],
+  moisturizers: [
+    'Step 3 · Seal',
+    'Lock in calm with a light cream. A veil, not a mask.'
+  ]
+};
+
+const products = cards.map(element => ({
+  el: element,
+  name: element.querySelector('.open').textContent,
+  price: element.dataset.price,
+  cat: element.dataset.cat,
+  meta: element.querySelector('.pbody p').textContent,
+  img: element.querySelector('.pimg img').getAttribute('src'),
+  rate: element.querySelector('.rt em').textContent
 }));
-let cur = null, qty = 1;
 
-function total() { $('pm-addtxt').textContent = `Add to Cart · ${money(cur.price * qty)}`; $('pm-qty').textContent = qty; }
+let cur = null;
+let qty = 1;
 
-function fill(p) {
-  cur = p; qty = 1;
-  $('pm-img').src = p.img; $('pm-img').alt = p.name;
-  $('pm-step').textContent = step[p.cat][0];
-  $('pm-title').textContent = p.name;
-  $('pm-rate').textContent = p.rate;
-  $('pm-cat').textContent = label[p.cat];
-  $('pm-price').textContent = money(p.price);
-  $('pm-desc').textContent = step[p.cat][1];
-  $('pm-size').textContent = p.meta;
-  $('pm-note').textContent = '';
-  const saved = p.el.querySelector('.pheart').classList.contains('on');
-  $('pm-heart').classList.toggle('on', saved); $('pm-heart').setAttribute('aria-pressed', saved);
-  const picks = products.filter(x => x !== p).sort((a, b) => (b.cat !== p.cat) - (a.cat !== p.cat)).slice(0, 3);
-  $('pm-sug').innerHTML = picks.map(x => `<button class="sg-i" type="button" data-n="${products.indexOf(x)}"><span class="sg-img"><em>${money(x.price)}</em><img src="${x.img}" alt="" width="84" height="84" loading="lazy"></span><span class="sg-t"><b>${x.name}</b><small>${x.meta}</small><i>View</i></span></button>`).join('');
-  total(); dlg.scrollTop = 0;
+function total() {
+  getElement('pm-addtxt').textContent =
+    `Add to Cart · ${money(Number(cur.price) * qty)}`;
+
+  getElement('pm-qty').textContent = qty;
 }
 
-cards.forEach((el, n) => el.querySelector('.open').addEventListener('click', () => { fill(products[n]); dlg.showModal(); }));
-$('pm-sug').addEventListener('click', e => {
-  const b = e.target.closest('.sg-i'); if (!b) return;
-  fill(products[b.dataset.n]); $('pm-title').focus();
+function fill(product) {
+  cur = product;
+  qty = 1;
+
+  getElement('pm-img').src = product.img;
+  getElement('pm-img').alt = product.name;
+
+  getElement('pm-step').textContent = step[product.cat][0];
+  getElement('pm-title').textContent = product.name;
+  getElement('pm-rate').textContent = product.rate;
+  getElement('pm-cat').textContent = label[product.cat];
+  getElement('pm-price').textContent = money(product.price);
+  getElement('pm-desc').textContent = step[product.cat][1];
+  getElement('pm-size').textContent = product.meta;
+  getElement('pm-note').textContent = '';
+
+  const isSaved = product.el
+    .querySelector('.pheart')
+    .classList.contains('on');
+
+  getElement('pm-heart').classList.toggle('on', isSaved);
+  getElement('pm-heart').setAttribute('aria-pressed', String(isSaved));
+
+  const suggestions = products
+    .filter(item => item !== product)
+    .sort((a, b) => Number(b.cat !== product.cat) - Number(a.cat !== product.cat))
+    .slice(0, 3);
+
+  getElement('pm-sug').innerHTML = suggestions.map(item => `
+    <button class="sg-i" type="button" data-n="${products.indexOf(item)}">
+      <span class="sg-img">
+        <em>${money(item.price)}</em>
+        <img
+          src="${item.img}"
+          alt=""
+          width="84"
+          height="84"
+          loading="lazy"
+        >
+      </span>
+      <span class="sg-t">
+        <b>${item.name}</b>
+        <small>${item.meta}</small>
+        <i>View</i>
+      </span>
+    </button>
+  `).join('');
+
+  total();
+  dlg.scrollTop = 0;
+}
+
+// Open a product's modal
+cards.forEach((element, index) => {
+  element.querySelector('.open').addEventListener('click', () => {
+    fill(products[index]);
+    dlg.showModal();
+  });
 });
-$('q-').addEventListener('click', () => { qty = Math.max(1, qty - 1); total(); });
-$('q-plus').addEventListener('click', () => { qty = Math.min(9, qty + 1); total(); });
-$('pm-add').addEventListener('click', () => { addToCart(qty); $('pm-note').textContent = `Added ${qty} × ${cur.name} to your cart.`; });
-$('pm-heart').addEventListener('click', () => {
+
+// Open a suggested product
+getElement('pm-sug').addEventListener('click', event => {
+  const button = event.target.closest('.sg-i');
+
+  if (!button) return;
+
+  fill(products[Number(button.dataset.n)]);
+  getElement('pm-title').focus();
+});
+
+// Decrease quantity
+getElement('q-').addEventListener('click', () => {
+  qty = Math.max(1, qty - 1);
+  total();
+});
+
+// Increase quantity
+getElement('q-plus').addEventListener('click', () => {
+  qty = Math.min(9, qty + 1);
+  total();
+});
+
+// Add the selected product and quantity to cart
+getElement('pm-add').addEventListener('click', () => {
+  addToCart(qty);
+
+  getElement('pm-note').textContent =
+    `Added ${qty} × ${cur.name} to your cart.`;
+});
+
+// Toggle wishlist from the modal
+getElement('pm-heart').addEventListener('click', () => {
   cur.el.querySelector('.pheart').click();
-  const on = cur.el.querySelector('.pheart').classList.contains('on');
-  $('pm-heart').classList.toggle('on', on); $('pm-heart').setAttribute('aria-pressed', on);
+
+  const isSaved = cur.el
+    .querySelector('.pheart')
+    .classList.contains('on');
+
+  getElement('pm-heart').classList.toggle('on', isSaved);
+  getElement('pm-heart').setAttribute('aria-pressed', String(isSaved));
 });
-$('pm-close').addEventListener('click', () => dlg.close());
-dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+// Close the product modal
+getElement('pm-close').addEventListener('click', () => {
+  dlg.close();
+});
+
+// Close the modal when its backdrop is clicked
+dlg.addEventListener('click', event => {
+  if (event.target === dlg) {
+    dlg.close();
+  }
+});
