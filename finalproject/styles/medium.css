@@ -28,3 +28,42 @@
     overflow: hidden;
   }
 }
+
+@media(max-width:900px) {
+    .bar {
+        flex-wrap: wrap;
+        gap: 10px
+    }
+
+    .tools {
+        gap: 10px
+    }
+
+    .bar nav {
+        display: none;
+        order: 3;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        font-size: 22px;
+        padding-top: 12px
+    }
+
+    .bar nav a {
+        padding: 10px 0
+    }
+
+    .mast.open .bar nav {
+        display: flex
+    }
+
+    .menu {
+        display: flex
+    }
+}
+
+@media(max-width:600px) {
+    .me {
+        display: none
+    }
+}
