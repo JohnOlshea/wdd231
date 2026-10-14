@@ -419,7 +419,11 @@ svg {
 
 .dark {
   background: #141110;
-  color: #fff
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: var(--pad);
+  align-items: center
 }
 
 .h2 {
@@ -701,13 +705,6 @@ svg {
   color: var(--mut)
 }
 
-.dark {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: var(--pad);
-  align-items: center
-}
-
 .avs {
   display: flex
 }
@@ -739,7 +736,8 @@ svg {
   gap: 4px;
   margin-top: 16px;
   color: rgba(255, 255, 255, .7);
-  font-size: 16px
+  font-size: 16px;
+  flex-wrap: wrap
 }
 
 .rate svg {
@@ -1125,10 +1123,6 @@ svg {
   .wrap {
     width: calc(100% - 24px)
   }
-}
-
-.rate {
-  flex-wrap: wrap
 }
 
 .proof,
