@@ -53,6 +53,10 @@ img {
   display: block
 }
 
+svg[aria-hidden="true"][width="0"][height="0"] {
+  position: absolute;
+}
+
 .hero {
   position: relative;
   height: calc(var(--s)*1659px);
