@@ -452,13 +452,37 @@ textarea:focus-visible {
     }
 }
 
-.svg-sprite{
-  position:absolute;
-  width:0;
-  height:0;
-  overflow:hidden;
+.svg-sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 
-.heart-fill{
-  fill: var(--hf, none);
+.heart-fill {
+    fill: var(--hf, none);
+}
+
+.bg-c2b5a8 {
+    background: #c2b5a8;
+}
+
+.bg-8aa8a5 {
+    background: #8aa8a5;
+}
+
+.bg-b89f91 {
+    background: #b89f91;
+}
+
+.bg-d9cfc6 {
+    background: #d9cfc6;
+}
+
+.bg-e8ddd4 {
+    background: #e8ddd4;
+}
+
+.bg-a89f91 {
+    background: #a89f91;
 }
