@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Message Received | Beauty Space</title>
+<meta name="description" content="Thank you for contacting Beauty Space. Your message has been received and our team will reply within 24 hours.">
+<meta name="author" content="John Alaska">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Message Received | Beauty Space">
+<meta property="og:description" content="Thank you for reaching out about your Centella ritual. We will get back to you within 24 hours.">
+<meta property="og:image" content="assets/product-1.jpg">
+<meta property="og:url" content="https://beautyspace.example/thanks.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="products.css">
+<link rel="stylesheet" href="contact.css">
+</head>
+<body id="top">
+<a href="#main" class="skip">Skip to content</a>
+<header class="dock on" id="dock"><a class="dlogo" href="index.html" aria-label="Home"><svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="9.5"/><circle cx="29" cy="29" r="9.5"/><path d="M21 1.5h8a9.5 9.5 0 0 1 9.5 9.5v8H30a9 9 0 0 1-9-9z"/><path d="M1.5 21H10a9 9 0 0 1 9 9v8.5h-8A9.5 9.5 0 0 1 1.5 29z"/></svg></a>
+<nav aria-label="Primary"><a href="index.html#ritual">Beauty Space</a><a href="contact.html">Contact Us</a><a href="products.html">Products</a></nav>
+<a class="dcart" href="products.html" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2.6l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 7H5.4"/></svg><span class="cb" hidden>0</span></a></header>
+
+<header class="mast mast--shop"><div class="bar"><a class="circle logo" href="index.html" aria-label="Beauty Space home"><svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="9.5"/><circle cx="29" cy="29" r="9.5"/><path d="M21 1.5h8a9.5 9.5 0 0 1 9.5 9.5v8H30a9 9 0 0 1-9-9z"/><path d="M1.5 21H10a9 9 0 0 1 9 9v8.5h-8A9.5 9.5 0 0 1 1.5 29z"/></svg></a><nav aria-label="Main"><a href="index.html">Beauty Space</a><a href="contact.html">Contact Us</a><a href="products.html">Products</a></nav></div><div class="mhead"><h1>Thank you<br><em>for reaching</em> <span>out</span></h1><aside><p>We will get back to you within 24 hours about your Centella ritual.</p></aside></div></header>
+
+<main id="main"><section class="band sand"><div class="in thanks"><h2>Your message details</h2><p class="sub">Below is a summary of what you sent. A copy is saved locally for your reference.</p><dl class="sum" id="summary"></dl><div class="btns" style="margin-top:28px"><a class="pill" href="products.html">Continue shopping</a><a class="pill ghost" href="contact.html">Send another message</a></div></div></section></main>
+
+<div class="fwrap"><footer class="foot"><div class="fl"><a class="flogo" href="index.html" aria-label="Home">BS</a><p>Centella from Madagascar. Fermented, low-temp, fragrance-free.</p></div><div class="legal"><span>© 2026 Beauty Space. All calm, all care.</span></div></footer></div>
+
+<script type="module">
+// thanks.html - display URL Search Params + localStorage
+const summary = document.getElementById('summary');
+const params = new URLSearchParams(window.location.search);
+const fields = ['name','email','topic','skin','message','updates'];
+
+if (![...params.keys()].length) {
+  summary.innerHTML = '<p>No form data found. Please <a href="contact.html">go back to the contact form</a>.</p>';
+} else {
+  const rows = fields.map(key => {
+    const value = params.get(key);
+    if (!value) return '';
+    const safe = value.replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+    return `<div><dt>${key}</dt><dd>${safe}</dd></div>`;
+  }).join('');
+  summary.innerHTML = rows;
+
+  // save to localStorage as preference example
+  try {
+    const obj = Object.fromEntries(params.entries());
+    localStorage.setItem('beauty-space-last-message', JSON.stringify(obj));
+  } catch {}
+}
+
+// render cart count from storage
+try {
+  const cart = JSON.parse(localStorage.getItem('beauty-space-cart')) || { count: 0 };
+  document.querySelectorAll('.cb').forEach(b => { b.textContent = cart.count; b.hidden = cart.count === 0; });
+} catch {}
+</script>
+</body>
+</html>
