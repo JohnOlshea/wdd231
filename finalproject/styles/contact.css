@@ -373,7 +373,7 @@ textarea:focus-visible {
     color: #000
 }
 
-.rvh figcaption {
+.rvh .review-name {
     font-size: 15.5px;
     font-weight: 500
 }
