@@ -24,8 +24,12 @@
   <meta property="og:url" content="https://johnolshea.github.io/wdd231/finalproject/products.html">
   <meta property="og:type" content="website">
 
-  <!-- Existing resources -->
-  <link rel="preload" href="images/fonts/outfit-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Outfit:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="styles/products.css">
 </head>
 
@@ -105,6 +109,7 @@
 
   <main id="shop">
     <section class="band sand">
+      <h2>Explore Our Products</h2>
       <div class="in">
         <div class="tools2">
           <div class="chips"><button class="chip on" data-f="all">All</button><button class="chip"
@@ -125,7 +130,8 @@
                 </svg></button><img src="images/product-1.jpg" alt="Centella Ampoule Foam Serume"></div>
             <div class="pbody">
               <div class="prow">
-                <h3><button class="open" type="button">Centella Ampoule Foam Serume</button></h3><b>$68.99</b>
+                <h2><button class="open" type="button">Centella Ampoule Foam Serume</button></h2>
+                <b>$68.99</b>
               </div>
               <p>125 ml / 4.85 FL. OZ Max</p>
               <div class="pfoot"><span class="rt"><svg>
@@ -314,11 +320,11 @@
               <use href="#i-heart" />
             </svg></button>
           <div class="vcard">
-            <div class="vin"><img id="pm-img" alt=""></div>
+            <div class="vin"><img id="pm-img" src="images/model-arch.webp" alt="Product model"></div>
           </div>
         </div>
         <div class="pm-info"><span class="tag" id="pm-step"></span>
-          <h2 id="pm-title" tabindex="-1"></h2>
+          <h2 id="pm-title" tabindex="-1">Product details</h2>
           <div class="pm-meta"><span class="rt"><svg aria-hidden="true">
                 <use href="#i-star" />
               </svg><svg aria-hidden="true">
