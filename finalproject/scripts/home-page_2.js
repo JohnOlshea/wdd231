@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded', function(){ var c={count:0}; try{ c=JSON.parse(localStorage.getItem('beauty-space-cart'))||c }catch(e){} document.querySelectorAll('.cb').forEach(function(b){ b.textContent=c.count; b.hidden=c.count===0; }); });
