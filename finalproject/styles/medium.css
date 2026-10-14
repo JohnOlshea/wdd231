@@ -1,0 +1,30 @@
+
+/* Medium screens: tablets and small laptops */
+@media (min-width: 901px) and (max-width: 1024px) {
+  .wrap {
+    width: calc(100% - 32px);
+  }
+
+  .grid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .spot,
+  .dark,
+  .foot {
+    grid-template-columns: 1fr;
+  }
+
+  .cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .head,
+  .legal {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    overflow: hidden;
+  }
+}

@@ -1,28 +1,3 @@
-/* Design canvas: 2212 x 1659 px. script.js scales it to fit the window. */
-@font-face {
-  font-family: 'Outfit';
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: url(assets/fonts/outfit-latin-400-normal.woff2) format('woff2')
-}
-
-@font-face {
-  font-family: 'Outfit';
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  src: url(assets/fonts/outfit-latin-500-normal.woff2) format('woff2')
-}
-
-@font-face {
-  font-family: 'Outfit';
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-  src: url(assets/fonts/outfit-latin-600-normal.woff2) format('woff2')
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -344,7 +319,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
   letter-spacing: -.01em
 }
 
-.product h3 {
+.product h2 {
   position: absolute;
   left: 24px;
   top: 289px;
@@ -866,7 +841,7 @@ svg {
   gap: 24px
 }
 
-.cols h4 {
+.cols h3, h4 {
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 16px
