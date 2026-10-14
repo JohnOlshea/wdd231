@@ -1314,3 +1314,11 @@ html:has(dialog[open]) {
 .menu {
     display: none
 }
+
+.svg-sprite{
+  position:absolute;
+}
+
+.heart-fill{
+  fill: var(--hf, none);
+}
