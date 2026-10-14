@@ -337,6 +337,9 @@ svg {
 }
 
 .pc {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     background: #fff;
     border-radius: var(--rs);
     padding: 14px;
@@ -396,12 +399,6 @@ svg {
 
 .pheart.on svg {
     --hf: currentColor
-}
-
-.pc {
-    position: relative;
-    display: flex;
-    flex-direction: column
 }
 
 .pbody {
