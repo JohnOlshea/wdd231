@@ -995,7 +995,7 @@ h4 {
     width: auto;
     height: auto;
     margin: 0;
-    transform: none !important
+    transform: none
   }
 
   .card {
@@ -1178,22 +1178,22 @@ h4 {
 /* light grey fails */
 .product p,
 .pc.pbody p {
-  color: #6a6560 !important
+  color: #6a6560
 }
 
 .item.row span,
 .chip span,
 .stats span {
-  color: #38322e !important
+  color: #38322e
 }
 
 .sec.taupe .h2.w,
 .taupe .h2.w,
 h2.h2.w {
-  color: rgb(26 22 20) !important;
+  color: rgb(26 22 20);
 }
 
 .sec.taupe .lede.w,
 .sec.taupe p.lead {
-  color: rgba(26, 22, 20, .88) !important;
+  color: rgba(26, 22, 20, .88);
 }
