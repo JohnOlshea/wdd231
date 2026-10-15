@@ -6,7 +6,7 @@
 
 :root {
     --ink: #1a1614;
-    --mut: rgba(26, 22, 20, .6);
+    --mut: #000;
     --sand: #f7f3ef;
     --tint: #f4efea;
     --r: clamp(36px, 5vw, 72px);
@@ -753,7 +753,7 @@ svg {
     padding-top: 24px;
     border-top: 1px solid rgba(0, 0, 0, .08);
     font-size: 14px;
-    color: rgba(26, 22, 20, .5)
+    color: var(--mut)
 }
 
 .dock {
