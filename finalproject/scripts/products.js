@@ -1,3 +1,5 @@
+import { formatPrice, saveCart } from './modules/helpers.js';
+
 const grid = document.getElementById('pgrid');
 const countEl = document.getElementById('count');
 const sortEl = document.getElementById('sort');
@@ -25,8 +27,7 @@ if (cart > 0) {
 }
 
 function saveState() {
-  localStorage.setItem('bs_wish', String(saved));
-  localStorage.setItem('bs_cart', String(cart));
+  saveCart(cart, saved);
 }
 
 function addToCart(qty = 1) {
@@ -70,7 +71,7 @@ function render() {
         <div class="pbody">
           <div class="prow">
             <h2><button class="open" type="button" data-id="${p.id}">${p.name}</button></h2>
-            <b>$${p.price.toFixed(2)}</b>
+            b>${formatPrice(p.price)}</b>
           </div>
           <p>${p.size}</p>
           <div class="pfoot">
