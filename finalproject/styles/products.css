@@ -384,7 +384,8 @@ svg {
     align-items: baseline
 }
 
-.prow h2, h3 {
+.prow h2,
+h3 {
     font-size: clamp(20px, 1.6vw, 24px);
     line-height: 1.2;
     font-weight: 500;
@@ -728,7 +729,8 @@ svg {
     gap: 24px
 }
 
-.cols h3, h4 {
+.cols h3,
+h4 {
     font-size: 17px;
     font-weight: 600;
     margin-bottom: 16px
@@ -1207,6 +1209,8 @@ html:has(dialog[open]) {
 .mast--shop {
     --aside: clamp(150px, 14vw, 200px);
     --padx: clamp(24px, 4vw, 64px);
+    color: var(--ink);
+    /* was #fff - inherited everywhere */
     position: relative;
     overflow: hidden;
     background: radial-gradient(55% 95% at 76% 35%, rgba(255, 255, 255, .3), transparent 70%), var(--taupe)
@@ -1229,7 +1233,8 @@ html:has(dialog[open]) {
 .mast--shop h1 em {
     font: italic 400 1.14em/.8 'Instrument Serif', Georgia, serif;
     letter-spacing: -.01em;
-    color: #fff
+    color: var(--ink);
+    /* was #fff */
 }
 
 .mast--shop .mhead aside {
@@ -1239,7 +1244,7 @@ html:has(dialog[open]) {
 .mast--shop .mhead aside p {
     margin-top: 6px;
     font-size: 15px;
-    color: rgba(255, 255, 255, .78)
+    color: rgba(26, 22, 20, .75);
 }
 
 .mvis {
@@ -1316,58 +1321,57 @@ html:has(dialog[open]) {
     display: none
 }
 
-.svg-sprite{
+.svg-sprite {
     position: absolute;
     width: 0;
     height: 0;
     overflow: hidden;
 }
 
-.heart-fill{
-  fill: var(--hf, none);
-}
-
-/* === CONTRAST FIX - mast--shop was white-on-taupe === */
-.mast--shop {
-  color: var(--ink); /* was #fff - inherited everywhere */
+.heart-fill {
+    fill: var(--hf, none);
 }
 
 .mast--shop .bar nav a {
-  color: var(--ink);
-  opacity: .85; /* was .75 white */
+    color: var(--ink);
+    opacity: .85;
+    /* was .75 white */
 }
+
 .mast--shop .bar nav a[aria-current],
 .mast--shop .bar nav a:hover {
-  opacity: 1;
-  color: #000;
+    opacity: 1;
+    color: #000;
 }
 
 .mast--shop h1 em {
-  color: var(--ink); /* was #fff */
+    color: var(--ink);
+    /* was #fff */
 }
 
 .mast--shop .mhead h1 span {
-  color: rgba(26, 22, 20, .62); /* was rgba(255,255,255,.55) -> 1.03 */
-}
-
-.mast--shop .mhead aside p {
-  color: rgba(26, 22, 20, .75); /* was rgba(255,255,255,.78) -> 1.05 */
+    color: rgba(26, 22, 20, .62);
+    /* was rgba(255,255,255,.55) -> 1.03 */
 }
 
 /* circles on taupe need dark icon */
 .mast--shop .circle {
-  background: rgba(26, 22, 20, .08);
-  color: var(--ink);
+    background: rgba(26, 22, 20, .08);
+    color: var(--ink);
 }
+
 .mast--shop .circle.logo {
-  background: rgba(255,255,255,.7);
+    background: rgba(255, 255, 255, .7);
 }
 
 .mast--shop .mchip.dark {
-  background: #141110;
-  color: #fff; /* this one already passes */
+    background: #141110;
+    color: #fff;
+    /* this one already passes */
 }
+
 .mast--shop .mchip.lite {
-  background: #fff;
-  color: var(--ink); /* already passes */
+    background: #fff;
+    color: var(--ink);
+    /* already passes */
 }
