@@ -1132,9 +1132,3 @@ h4 {
     grid-template-columns: minmax(0, 1fr)
   }
 }
-
-/* === WCAG AA CONTRAST FIX === */
-.circle {
-  background: rgba(26, 22, 20, .08);
-  color: #1a1614
-}
