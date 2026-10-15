@@ -1344,11 +1344,6 @@ html:has(dialog[open]) {
     color: #000;
 }
 
-.mast--shop h1 em {
-    color: var(--ink);
-    /* was #fff */
-}
-
 .mast--shop .mhead h1 span {
     color: rgba(26, 22, 20, .62);
     /* was rgba(255,255,255,.55) -> 1.03 */

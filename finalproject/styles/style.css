@@ -1136,3 +1136,14 @@ svg[aria-hidden="true"][width="0"][height="0"] {
     grid-template-columns: minmax(0, 1fr)
   }
 }
+
+/* === WCAG AA CONTRAST FIX === */
+.nav{color:#1a1614}
+.circle{background:rgba(26,22,20,.08);color:#1a1614}
+.title{color:#1a1614}
+.lead{color:rgba(26,22,20,.88)}
+.count{color:#1a1614}
+.feature{color:rgba(26,22,20,.75)}
+.product p{color:#6a6560}
+.item .row span{color:#38322e}
+.h2 span{color:#59534f} /* was #707070 on white 4.0:1 -> 7.1:1 */
