@@ -1,3 +1,22 @@
+:root {
+  --s: .5;
+  --ink: #1a1614;
+  --mut:#38322e;
+  --r: clamp(36px, calc(var(--s)*115px), 100px);
+  --rs: clamp(24px, calc(var(--s)*56px), 44px);
+  --pad: clamp(28px, calc(var(--s)*90px), 80px);
+  --gap: clamp(20px, calc(var(--s)*64px), 60px);
+  --shadow: 0 45px 80px -25px rgba(92, 76, 66, .45)
+}
+
+[hidden] {
+  display: none !important
+}
+
+svg {
+  display: block
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -354,24 +373,6 @@ svg[aria-hidden="true"][width="0"][height="0"] {
 }
 
 /* ---------- full page ---------- */
-:root {
-  --s: .5;
-  --ink: #1a1614;
-  --mut: rgba(26, 22, 20, .6);
-  --r: clamp(36px, calc(var(--s)*115px), 100px);
-  --rs: clamp(24px, calc(var(--s)*56px), 44px);
-  --pad: clamp(28px, calc(var(--s)*90px), 80px);
-  --gap: clamp(20px, calc(var(--s)*64px), 60px);
-  --shadow: 0 45px 80px -25px rgba(92, 76, 66, .45)
-}
-
-[hidden] {
-  display: none !important
-}
-
-svg {
-  display: block
-}
 
 .cb {
   position: absolute;
@@ -434,7 +435,7 @@ svg {
 }
 
 .h2 span {
-  color: rgba(26, 22, 20, .35)
+  color: #707070;
 }
 
 .w {
@@ -547,7 +548,7 @@ svg {
 
 .item .row span {
   font-size: 14px;
-  color: #9b9692
+  color: #4b4b4b;
 }
 
 .buy {
@@ -865,7 +866,7 @@ svg {
   padding-top: 24px;
   border-top: 1px solid rgba(0, 0, 0, .08);
   font-size: 14px;
-  color: rgba(26, 22, 20, .5)
+  color: var(--mut)
 }
 
 /* floating dock nav (appears after the hero) */
