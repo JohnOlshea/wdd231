@@ -1,7 +1,7 @@
 :root {
   --s: .5;
   --ink: #1a1614;
-  --mut:#38322e;
+  --mut: #38322e;
   --r: clamp(36px, calc(var(--s)*115px), 100px);
   --rs: clamp(24px, calc(var(--s)*56px), 44px);
   --pad: clamp(28px, calc(var(--s)*90px), 80px);
@@ -98,14 +98,14 @@ svg[aria-hidden="true"][width="0"][height="0"] {
 
 /* header */
 .circle {
-  width: 72px;
-  height: 72px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, .35);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff
+  background: rgba(26, 22, 20, .08);
+  color: #1a1614
 }
 
 .logo {
@@ -127,7 +127,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
   font-size: 24px;
   font-weight: 500;
   line-height: 40px;
-  color: #fff;
+  color: #1a1614;
   white-space: nowrap
 }
 
@@ -185,7 +185,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
   line-height: 110px;
   font-weight: 500;
   letter-spacing: -.045em;
-  color: #fff;
+  color: #1a1614;
   white-space: nowrap
 }
 
@@ -196,7 +196,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
   line-height: 33px;
   font-weight: 400;
   letter-spacing: -.01em;
-  color: rgba(255, 255, 255, .75);
+  color: rgba(26, 22, 20, .88);
   white-space: nowrap
 }
 
@@ -238,7 +238,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
   line-height: 60px;
   font-weight: 500;
   text-align: center;
-  color: #fff
+  color: #1a1614
 }
 
 .feature {
@@ -248,7 +248,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
   line-height: 33px;
   font-weight: 400;
   letter-spacing: -.01em;
-  color: rgba(255, 255, 255, .75);
+  color: rgba(26, 22, 20, .75);
   white-space: nowrap
 }
 
@@ -355,7 +355,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
   font-size: 16px;
   line-height: 19px;
   font-weight: 400;
-  color: #9b9692
+  color: #6a6560
 }
 
 .book {
@@ -435,7 +435,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
 }
 
 .h2 span {
-  color: #707070;
+  color: #59534f
 }
 
 .w {
@@ -548,7 +548,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
 
 .item .row span {
   font-size: 14px;
-  color: #4b4b4b;
+  color: #38322e
 }
 
 .buy {
@@ -840,7 +840,8 @@ svg[aria-hidden="true"][width="0"][height="0"] {
   gap: 24px
 }
 
-.cols h3, h4 {
+.cols h3,
+h4 {
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 16px
@@ -1037,11 +1038,6 @@ svg[aria-hidden="true"][width="0"][height="0"] {
     top: auto
   }
 
-  .circle {
-    width: 52px;
-    height: 52px
-  }
-
   .logo svg {
     width: 30px;
     height: 30px
@@ -1138,12 +1134,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
 }
 
 /* === WCAG AA CONTRAST FIX === */
-.nav{color:#1a1614}
-.circle{background:rgba(26,22,20,.08);color:#1a1614}
-.title{color:#1a1614}
-.lead{color:rgba(26,22,20,.88)}
-.count{color:#1a1614}
-.feature{color:rgba(26,22,20,.75)}
-.product p{color:#6a6560}
-.item .row span{color:#38322e}
-.h2 span{color:#59534f} /* was #707070 on white 4.0:1 -> 7.1:1 */
+.circle {
+  background: rgba(26, 22, 20, .08);
+  color: #1a1614
+}
