@@ -1132,3 +1132,21 @@ h4 {
     grid-template-columns: minmax(0, 1fr)
   }
 }
+
+
+/* WCAG AA FIX - 0 contrast errors */
+.mast{color:var(--ink)}
+.bar nav{color:var(--ink)}
+.bar nav a{opacity:.85}
+.mast.circle{background:rgba(26,22,20,.08);color:var(--ink)}
+.mast.mhead h1 span{color:rgba(26,22,20,.62)}
+.mast.mhead aside p{color:rgba(26,22,20,.75)}
+.mast h1 em{color:var(--ink)}
+/* keep chips readable */
+.mchip.dark{background:#141110;color:#fff}
+.mchip.lite{background:#fff;color:var(--ink)}
+
+/* light grey fails */
+.product p,.pc.pbody p{color:#6a6560!important}
+.item.row span,.chip span,.stats span{color:#38322e!important}
+.h2 span{color:#59534f!important}

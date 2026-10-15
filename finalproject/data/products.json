@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "name": "Centella Ampoule Foam Serume",
+        "price": 68.99,
+        "cat": "cleansers",
+        "size": "125 ml / 4.85 FL. OZ",
+        "rate": "4.9 (2.1k)",
+        "img": "images/product-1.jpg",
+        "tag": "Centella · Madagascar"
+    },
+    {
+        "id": 2,
+        "name": "Quick Calming Pads Serum",
+        "price": 27.69,
+        "cat": "toners",
+        "size": "25 ml / 1.65 FL. OZ",
+        "rate": "4.9 (2.1k)",
+        "img": "images/product-2.jpg",
+        "tag": "Centella · Madagascar"
+    },
+    {
+        "id": 3,
+        "name": "Centella Asiatica Facial Serum",
+        "price": 68.99,
+        "cat": "serums",
+        "size": "55 ml / 1.85 FL. OZ",
+        "rate": "4.9 (2.1k)",
+        "img": "images/product-3.jpg",
+        "tag": "Centella · Madagascar"
+    },
+    {
+        "id": 4,
+        "name": "Light Cica Cream",
+        "price": 76.00,
+        "cat": "moisturizers",
+        "size": "50 ml / 1.69 FL. OZ",
+        "rate": "4.9 (1.8k)",
+        "img": "images/product-2.jpg",
+        "tag": "Cica · Probio"
+    },
+    {
+        "id": 5,
+        "name": "Madagascar Ampoule",
+        "price": 82.00,
+        "cat": "serums",
+        "size": "100 ml / 3.38 FL. OZ",
+        "rate": "4.8 (1.2k)",
+        "img": "images/product-3.jpg",
+        "tag": "100% Centella"
+    },
+    {
+        "id": 6,
+        "name": "Centella Probio Serum",
+        "price": 89.00,
+        "cat": "serums",
+        "size": "30 ml / 1.01 FL. OZ",
+        "rate": "4.9 (2.4k)",
+        "img": "images/product-3.jpg",
+        "tag": "Barrier recovery"
+    },
+    {
+        "id": 7,
+        "name": "Tone Brightening Capsule",
+        "price": 54.00,
+        "cat": "toners",
+        "size": "130 ml / 4.39 FL. OZ",
+        "rate": "4.8 (980)",
+        "img": "images/product-2.jpg",
+        "tag": "Tone · Brightening"
+    },
+    {
+        "id": 8,
+        "name": "Hyalu-Cica Moisture",
+        "price": 72.00,
+        "cat": "moisturizers",
+        "size": "100 ml / 3.38 FL. OZ",
+        "rate": "4.9 (3.1k)",
+        "img": "images/product-1.jpg",
+        "tag": "Hydration"
+    },
+    {
+        "id": 9,
+        "name": "Tea-Trica Relief Serum",
+        "price": 62.00,
+        "cat": "serums",
+        "size": "30 ml / 1.01 FL. OZ",
+        "rate": "4.7 (760)",
+        "img": "images/product-3.jpg",
+        "tag": "Soothing"
+    },
+    {
+        "id": 10,
+        "name": "Probio-Cica Essence Toner",
+        "price": 48.00,
+        "cat": "toners",
+        "size": "210 ml / 7.10 FL. OZ",
+        "rate": "4.9 (1.5k)",
+        "img": "images/product-2.jpg",
+        "tag": "Essence"
+    },
+    {
+        "id": 11,
+        "name": "Air-Fit Suncream",
+        "price": 34.00,
+        "cat": "moisturizers",
+        "size": "50 ml / 1.69 FL. OZ",
+        "rate": "4.8 (2.8k)",
+        "img": "images/product-1.jpg",
+        "tag": "SPF50+"
+    },
+    {
+        "id": 12,
+        "name": "Centella Cleansing Foam",
+        "price": 28.00,
+        "cat": "cleansers",
+        "size": "125 ml / 4.22 FL. OZ",
+        "rate": "4.9 (4.2k)",
+        "img": "images/product-1.jpg",
+        "tag": "Low pH"
+    },
+    {
+        "id": 13,
+        "name": "Pore Control Cleansing Oil",
+        "price": 31.00,
+        "cat": "cleansers",
+        "size": "200 ml / 6.76 FL. OZ",
+        "rate": "4.8 (890)",
+        "img": "images/product-1.jpg",
+        "tag": "Pore Care"
+    },
+    {
+        "id": 14,
+        "name": "Cica Calming Mask",
+        "price": 42.00,
+        "cat": "moisturizers",
+        "size": "4 sheets",
+        "rate": "4.9 (1.1k)",
+        "img": "images/product-2.jpg",
+        "tag": "Sheet Mask"
+    },
+    {
+        "id": 15,
+        "name": "Centella Eye Cream",
+        "price": 58.00,
+        "cat": "moisturizers",
+        "size": "30 ml / 1.01 FL. OZ",
+        "rate": "4.8 (650)",
+        "img": "images/product-3.jpg",
+        "tag": "Eye Care"
+    }
+]

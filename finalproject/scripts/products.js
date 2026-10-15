@@ -1,256 +1,174 @@
+const grid = document.getElementById('pgrid');
+const countEl = document.getElementById('count');
+const sortEl = document.getElementById('sort');
+const wishCount = document.getElementById('wishCount');
+const chips = [...document.querySelectorAll('.chip')];
 const dock = document.getElementById('dock');
 
-const onScroll = () => {
-  dock.classList.toggle('on', window.scrollY > 320);
-};
-
-window.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
-
-// Filter and sort
-const grid = document.getElementById('pgrid');
-const cards = [...grid.children];
-const chips = [...document.querySelectorAll('.chip')];
-const count = document.getElementById('count');
-const sort = document.getElementById('sort');
-
+let allProducts = [];
 let filter = 'all';
+let saved = Number(localStorage.getItem('bs_wish') || 0);
+let cart = Number(localStorage.getItem('bs_cart') || 0);
 
-function render() {
-  const list = cards.filter(
-    card => filter === 'all' || card.dataset.cat === filter
-  );
-
-  if (sort.value === 'asc') {
-    list.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
-  } else if (sort.value === 'desc') {
-    list.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
-  } else {
-    list.sort((a, b) => Number(a.dataset.i) - Number(b.dataset.i));
-  }
-
-  cards.forEach(card => {
-    card.hidden = !list.includes(card);
-  });
-
-  list.forEach(card => grid.appendChild(card));
-
-  chips.forEach(chip => {
-    chip.classList.toggle('on', chip.dataset.f === filter);
-  });
-
-  count.textContent =
-    list.length + (list.length === 1 ? ' product' : ' products');
+if (dock) {
+  const onScroll = () => dock.classList.toggle('on', window.scrollY > 320);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
-chips.forEach(chip => {
-  chip.addEventListener('click', () => {
-    filter = chip.dataset.f;
+if (wishCount) wishCount.textContent = String(12 + saved);
+if (cart > 0) {
+  document.querySelectorAll('.cb').forEach(c => {
+    c.textContent = String(cart);
+    c.hidden = false;
+  });
+}
+
+function saveState() {
+  localStorage.setItem('bs_wish', String(saved));
+  localStorage.setItem('bs_cart', String(cart));
+}
+
+function addToCart(qty = 1) {
+  cart += qty;
+  document.querySelectorAll('.cb').forEach(c => {
+    c.textContent = String(cart);
+    c.hidden = false;
+  });
+  saveState();
+}
+
+async function loadProducts() {
+  try {
+    const res = await fetch('data/products.json');
+    if (!res.ok) throw new Error('Fetch failed');
+    allProducts = await res.json();
+    render();
+  } catch (err) {
+    console.error(err);
+    if (grid) grid.innerHTML = '<p>Failed to load products. Please refresh.</p>';
+  }
+}
+
+function render() {
+  if (!grid) return;
+  let list = allProducts.filter(p => filter === 'all' || p.cat === filter);
+  if (sortEl && sortEl.value === 'asc') list.sort((a, b) => a.price - b.price);
+  else if (sortEl && sortEl.value === 'desc') list.sort((a, b) => b.price - a.price);
+  else list.sort((a, b) => a.id - b.id);
+
+  const html = list.map(p => {
+    return `
+      <article class="pc" data-cat="${p.cat}" data-price="${p.price}" data-i="${p.id}">
+        <div class="pimg">
+          <span class="ptag">${p.tag}</span>
+          <button class="pheart" data-id="${p.id}" aria-label="Save ${p.name}">
+            <svg><use href="#i-heart"/></svg>
+          </button>
+          <img src="${p.img}" alt="${p.name}" width="320" height="320" loading="lazy">
+        </div>
+        <div class="pbody">
+          <div class="prow">
+            <h2><button class="open" type="button" data-id="${p.id}">${p.name}</button></h2>
+            <b>$${p.price.toFixed(2)}</b>
+          </div>
+          <p>${p.size}</p>
+          <div class="pfoot">
+            <span class="rt"><svg><use href="#i-star"/></svg>${p.rate}</span>
+            <button class="buy" data-id="${p.id}"><span>Add to Cart</span><i><svg><use href="#i-cart"/></svg></i></button>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  grid.innerHTML = html;
+  if (countEl) countEl.textContent = list.length + (list.length === 1 ? ' product' : ' products');
+  chips.forEach(ch => ch.classList.toggle('on', ch.dataset.f === filter));
+  attachEvents();
+}
+
+function attachEvents() {
+  grid.querySelectorAll('.pheart').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('on');
+      saved += btn.classList.contains('on') ? 1 : -1;
+      if (wishCount) wishCount.textContent = String(12 + saved);
+      saveState();
+    });
+  });
+  grid.querySelectorAll('.buy').forEach(b => b.addEventListener('click', () => addToCart(1)));
+  grid.querySelectorAll('.open').forEach(b => {
+    b.addEventListener('click', e => {
+      openModal(Number(e.currentTarget.dataset.id));
+    });
+  });
+}
+
+const dlg = document.getElementById('pm');
+const getEl = id => document.getElementById(id);
+
+function openModal(id) {
+  const p = allProducts.find(x => x.id === id);
+  if (!p || !dlg) return;
+  const img = getEl('pm-img');
+  if (img) { img.src = p.img; img.alt = p.name; }
+  if (getEl('pm-title')) getEl('pm-title').textContent = p.name;
+  if (getEl('pm-price')) getEl('pm-price').textContent = '$' + p.price.toFixed(2);
+  if (getEl('pm-desc')) getEl('pm-desc').textContent = p.size;
+  if (getEl('pm-cat')) getEl('pm-cat').textContent = p.cat;
+  if (getEl('pm-rate')) getEl('pm-rate').textContent = p.rate;
+  if (getEl('pm-step')) getEl('pm-step').textContent = p.tag;
+
+  const sugEl = getEl('pm-sug');
+  if (sugEl) {
+    const others = allProducts.filter(x => x.id !== p.id);
+    others.sort((a, b) => {
+      const diffCat = (a.cat !== p.cat ? 1 : 0) - (b.cat !== p.cat ? 1 : 0);
+      if (diffCat !== 0) return -diffCat;
+      return Math.random() - 0.5;
+    });
+    const sug = others.slice(0, 3);
+    sugEl.innerHTML = sug.map(s => {
+      return `
+        <button class="sg-i" type="button" data-n="${s.id}">
+          <span class="sg-img">
+            <em>$${s.price.toFixed(2)}</em>
+            <img src="${s.img}" alt="${s.name}" width="84" height="84" loading="lazy">
+          </span>
+          <span class="sg-t">
+            <b>${s.name}</b>
+            <small>${s.size}</small>
+            <i>View</i>
+          </span>
+        </button>
+      `;
+    }).join('');
+    sugEl.querySelectorAll('.sg-i').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openModal(Number(btn.dataset.n));
+      });
+    });
+  }
+  dlg.showModal();
+}
+
+chips.forEach(ch => {
+  ch.addEventListener('click', () => {
+    filter = ch.dataset.f;
     render();
   });
 });
-
-sort.addEventListener('change', render);
-
-document.querySelector('[data-go]').addEventListener('click', event => {
-  filter = event.currentTarget.dataset.go;
-  render();
-  document.getElementById('shop').scrollIntoView();
-});
-
-// Wishlist: header count and card hearts
-const wishCount = document.getElementById('wishCount');
-let saved = 0;
-
-document.querySelectorAll('.pc .pheart').forEach(heart => {
-  heart.addEventListener('click', () => {
-    heart.classList.toggle('on');
-
-    saved += heart.classList.contains('on') ? 1 : -1;
-    wishCount.textContent = 12 + saved;
-  });
-});
-
-// Cart count: header and dock
-let cart = 0;
-
-function addToCart(quantity = 1) {
-  cart += quantity;
-
-  document.querySelectorAll('.cb').forEach(counter => {
-    counter.textContent = cart;
-    counter.hidden = false;
+if (sortEl) sortEl.addEventListener('change', render);
+const closeBtn = getEl('pm-close');
+if (closeBtn && dlg) closeBtn.addEventListener('click', () => dlg.close());
+if (dlg) dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+const addBtn = getEl('pm-add');
+if (addBtn) {
+  addBtn.addEventListener('click', () => {
+    addToCart(1);
+    const note = getEl('pm-note');
+    if (note) note.textContent = 'Added to cart - saved in localStorage';
   });
 }
-
-// Add products to cart
-document.querySelectorAll('.pc .buy').forEach(button => {
-  button.addEventListener('click', () => addToCart());
-});
-
-// Product modal
-const dlg = document.getElementById('pm');
-
-const getElement = id => document.getElementById(id);
-
-const money = amount => '$' + Number(amount).toFixed(2);
-
-const label = {
-  cleansers: 'Cleanser',
-  toners: 'Toner',
-  serums: 'Serum',
-  moisturizers: 'Moisturizer'
-};
-
-const step = {
-  cleansers: [
-    'Step 1 · Cleanse',
-    'Melt the day with Madagascar Centella foam. No stripping, just soft cloud.'
-  ],
-  toners: [
-    'Step 2 · Tone',
-    'Balance with calming pads. Preps skin to absorb, not react.'
-  ],
-  serums: [
-    'Step 3 · Seal',
-    'Lock in calm with the Centella serum. A veil, not a mask.'
-  ],
-  moisturizers: [
-    'Step 3 · Seal',
-    'Lock in calm with a light cream. A veil, not a mask.'
-  ]
-};
-
-const products = cards.map(element => ({
-  el: element,
-  name: element.querySelector('.open').textContent,
-  price: element.dataset.price,
-  cat: element.dataset.cat,
-  meta: element.querySelector('.pbody p').textContent,
-  img: element.querySelector('.pimg img').getAttribute('src'),
-  rate: element.querySelector('.rt em').textContent
-}));
-
-let cur = null;
-let qty = 1;
-
-function total() {
-  getElement('pm-addtxt').textContent =
-    `Add to Cart · ${money(Number(cur.price) * qty)}`;
-
-  getElement('pm-qty').textContent = qty;
-}
-
-function fill(product) {
-  cur = product;
-  qty = 1;
-
-  getElement('pm-img').src = product.img;
-  getElement('pm-img').alt = product.name;
-
-  getElement('pm-step').textContent = step[product.cat][0];
-  getElement('pm-title').textContent = product.name;
-  getElement('pm-rate').textContent = product.rate;
-  getElement('pm-cat').textContent = label[product.cat];
-  getElement('pm-price').textContent = money(product.price);
-  getElement('pm-desc').textContent = step[product.cat][1];
-  getElement('pm-size').textContent = product.meta;
-  getElement('pm-note').textContent = '';
-
-  const isSaved = product.el
-    .querySelector('.pheart')
-    .classList.contains('on');
-
-  getElement('pm-heart').classList.toggle('on', isSaved);
-  getElement('pm-heart').setAttribute('aria-pressed', String(isSaved));
-
-  const suggestions = products
-    .filter(item => item !== product)
-    .sort((a, b) => Number(b.cat !== product.cat) - Number(a.cat !== product.cat))
-    .slice(0, 3);
-
-  getElement('pm-sug').innerHTML = suggestions.map(item => `
-    <button class="sg-i" type="button" data-n="${products.indexOf(item)}">
-      <span class="sg-img">
-        <em>${money(item.price)}</em>
-        <img
-          src="${item.img}"
-          alt=""
-          width="84"
-          height="84"
-          loading="lazy"
-        >
-      </span>
-      <span class="sg-t">
-        <b>${item.name}</b>
-        <small>${item.meta}</small>
-        <i>View</i>
-      </span>
-    </button>
-  `).join('');
-
-  total();
-  dlg.scrollTop = 0;
-}
-
-// Open a product's modal
-cards.forEach((element, index) => {
-  element.querySelector('.open').addEventListener('click', () => {
-    fill(products[index]);
-    dlg.showModal();
-  });
-});
-
-// Open a suggested product
-getElement('pm-sug').addEventListener('click', event => {
-  const button = event.target.closest('.sg-i');
-
-  if (!button) return;
-
-  fill(products[Number(button.dataset.n)]);
-  getElement('pm-title').focus();
-});
-
-// Decrease quantity
-getElement('q-').addEventListener('click', () => {
-  qty = Math.max(1, qty - 1);
-  total();
-});
-
-// Increase quantity
-getElement('q-plus').addEventListener('click', () => {
-  qty = Math.min(9, qty + 1);
-  total();
-});
-
-// Add the selected product and quantity to cart
-getElement('pm-add').addEventListener('click', () => {
-  addToCart(qty);
-
-  getElement('pm-note').textContent =
-    `Added ${qty} × ${cur.name} to your cart.`;
-});
-
-// Toggle wishlist from the modal
-getElement('pm-heart').addEventListener('click', () => {
-  cur.el.querySelector('.pheart').click();
-
-  const isSaved = cur.el
-    .querySelector('.pheart')
-    .classList.contains('on');
-
-  getElement('pm-heart').classList.toggle('on', isSaved);
-  getElement('pm-heart').setAttribute('aria-pressed', String(isSaved));
-});
-
-// Close the product modal
-getElement('pm-close').addEventListener('click', () => {
-  dlg.close();
-});
-
-// Close the modal when its backdrop is clicked
-dlg.addEventListener('click', event => {
-  if (event.target === dlg) {
-    dlg.close();
-  }
-});
+loadProducts();
