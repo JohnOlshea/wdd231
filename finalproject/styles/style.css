@@ -1101,7 +1101,7 @@ h4 {
     font-size: 16px;
     line-height: 1.55;
     white-space: normal;
-    color: rgba(255, 255, 255, .88)
+    color: rgba(26, 22, 20, .88)
   }
 
   .lead br {
@@ -1185,4 +1185,15 @@ h4 {
 .chip span,
 .stats span {
   color: #38322e !important
+}
+
+.sec.taupe .h2.w,
+.taupe .h2.w,
+h2.h2.w {
+  color: rgb(26 22 20) !important;
+}
+
+.sec.taupe .lede.w,
+.sec.taupe p.lead {
+  color: rgba(26, 22, 20, .88) !important;
 }
