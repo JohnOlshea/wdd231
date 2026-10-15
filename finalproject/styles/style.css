@@ -53,7 +53,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
 
 .hero {
   position: relative;
-  height: calc(var(--s)*1659px);
+  height: calc(var(--s)*1500px);
   overflow: hidden
 }
 
@@ -62,7 +62,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
   left: 50%;
   top: 0;
   width: 2212px;
-  height: 1659px;
+  height: 1500px;
   margin-left: -1106px;
   transform-origin: top center;
   transform: scale(var(--s))
@@ -71,7 +71,7 @@ svg[aria-hidden="true"][width="0"][height="0"] {
 .card {
   position: absolute;
   left: 125px;
-  top: 125px;
+  top: 50px;
   width: 1962px;
   height: 1382px;
   border-radius: 115px;

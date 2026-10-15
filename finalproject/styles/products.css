@@ -129,6 +129,7 @@ svg {
 }
 
 .badge {
+    color: #fff;
     position: absolute;
     left: -16px;
     top: 16px;
@@ -1324,4 +1325,49 @@ html:has(dialog[open]) {
 
 .heart-fill{
   fill: var(--hf, none);
+}
+
+/* === CONTRAST FIX - mast--shop was white-on-taupe === */
+.mast--shop {
+  color: var(--ink); /* was #fff - inherited everywhere */
+}
+
+.mast--shop .bar nav a {
+  color: var(--ink);
+  opacity: .85; /* was .75 white */
+}
+.mast--shop .bar nav a[aria-current],
+.mast--shop .bar nav a:hover {
+  opacity: 1;
+  color: #000;
+}
+
+.mast--shop h1 em {
+  color: var(--ink); /* was #fff */
+}
+
+.mast--shop .mhead h1 span {
+  color: rgba(26, 22, 20, .62); /* was rgba(255,255,255,.55) -> 1.03 */
+}
+
+.mast--shop .mhead aside p {
+  color: rgba(26, 22, 20, .75); /* was rgba(255,255,255,.78) -> 1.05 */
+}
+
+/* circles on taupe need dark icon */
+.mast--shop .circle {
+  background: rgba(26, 22, 20, .08);
+  color: var(--ink);
+}
+.mast--shop .circle.logo {
+  background: rgba(255,255,255,.7);
+}
+
+.mast--shop .mchip.dark {
+  background: #141110;
+  color: #fff; /* this one already passes */
+}
+.mast--shop .mchip.lite {
+  background: #fff;
+  color: var(--ink); /* already passes */
 }
